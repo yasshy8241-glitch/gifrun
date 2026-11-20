@@ -408,17 +408,17 @@
                     <!-- 画像サイズ 4択 -->
                     <div class="space-y-2.5">
                         <div class="flex items-center justify-between">
-                            <label class="block text-sm font-bold text-stone-800 dark:text-stone-100">画像サイズ（用途で選ぶ）</label>
-                            <span class="text-[11px] text-stone-400 dark:text-stone-500">縦長・横長を自動最適化</span>
+                            <label class="block text-sm font-bold text-stone-800 dark:text-stone-100">画像サイズ（短辺基準・用途で選ぶ）</label>
+                            <span class="text-[11px] text-stone-400 dark:text-stone-500">元動画より拡大しません</span>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="radiogroup" aria-label="画像サイズプリセット">
-                            <button type="button" data-size="360" data-label="軽量（チャット用）"
+                            <button type="button" data-size="320" data-label="軽量（チャット用）"
                                 class="size-preset-btn text-left p-3.5 rounded-xl border-2 transition-all border-warm-200 dark:border-matte-700 bg-warm-50/40 dark:bg-matte-800/40 hover:border-emerald-400">
                                 <div class="flex items-center justify-between">
                                     <span class="font-bold text-sm text-stone-900 dark:text-white">軽量（チャット用）</span>
-                                    <span class="text-xs font-mono font-semibold text-stone-400 dark:text-stone-500">360px</span>
+                                    <span class="text-xs font-mono font-semibold text-stone-400 dark:text-stone-500">短辺 320px</span>
                                 </div>
-                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">LINE・Slack向け / 容量最小</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">LINE・Slack向け / 縦9:16で320×568</p>
                             </button>
 
                             <button type="button" data-size="480" data-label="スマホ向け（標準）"
@@ -428,27 +428,27 @@
                                         スマホ向け（標準）
                                         <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500 text-white font-bold">おすすめ</span>
                                     </span>
-                                    <span class="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">480px</span>
+                                    <span class="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">短辺 480px</span>
                                 </div>
-                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">見やすさと軽さのバランス</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">細部までくっきり / 縦9:16で480×854</p>
                             </button>
 
-                            <button type="button" data-size="720" data-label="PC向け（くっきり）"
+                            <button type="button" data-size="640" data-label="PC向け（くっきり）"
                                 class="size-preset-btn text-left p-3.5 rounded-xl border-2 transition-all border-warm-200 dark:border-matte-700 bg-warm-50/40 dark:bg-matte-800/40 hover:border-emerald-400">
                                 <div class="flex items-center justify-between">
                                     <span class="font-bold text-sm text-stone-900 dark:text-white">PC向け（くっきり）</span>
-                                    <span class="text-xs font-mono font-semibold text-stone-400 dark:text-stone-500">720px</span>
+                                    <span class="text-xs font-mono font-semibold text-stone-400 dark:text-stone-500">短辺 640px</span>
                                 </div>
-                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">資料・PC画面での閲覧向け</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">資料・PC閲覧向け / 縦9:16で640×1138</p>
                             </button>
 
-                            <button type="button" data-size="960" data-label="高画質"
+                            <button type="button" data-size="720" data-label="高画質（きれい）"
                                 class="size-preset-btn text-left p-3.5 rounded-xl border-2 transition-all border-warm-200 dark:border-matte-700 bg-warm-50/40 dark:bg-matte-800/40 hover:border-emerald-400">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-bold text-sm text-stone-900 dark:text-white">高画質</span>
-                                    <span class="text-xs font-mono font-semibold text-stone-400 dark:text-stone-500">960px</span>
+                                    <span class="font-bold text-sm text-stone-900 dark:text-white">高画質（きれい）</span>
+                                    <span class="text-xs font-mono font-semibold text-stone-400 dark:text-stone-500">短辺 720px</span>
                                 </div>
-                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">細かい文字まで鮮明 / 容量大</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">実写や細かい文字も鮮明 / 720×1280</p>
                             </button>
                         </div>
                     </div>
@@ -510,40 +510,40 @@
                             </div>
                             <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
                                 画面に動きがない連続フレームを1枚にまとめて軽量化・高速化します（再生時間はそのまま）
-                            </p>
-                        </div>
-                        <button id="toggle-dedup" type="button" role="switch" aria-checked="true" aria-label="静止フレーム自動統合を切り替え"
-                            class="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-emerald-500 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-matte-900">
-                            <span id="toggle-dedup-knob" class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5"></span>
-                        </button>
-                    </div>
-
-                    <!-- 画質仕上げ 2択 -->
+                    <!-- 画質仕上げ 3択 -->
                     <div class="space-y-2.5">
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
                             <label class="block text-sm font-bold text-stone-800 dark:text-stone-100">画質仕上げ</label>
-                            <span class="text-[11px] text-stone-400 dark:text-stone-500">適応型256色パレット</span>
+                            <span id="auto-finish-badge" class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300">
+                                フル8-bit高精度256色
+                            </span>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="radiogroup" aria-label="画質仕上げプリセット">
-                            <button type="button" data-finish="crisp" data-finish-label="くっきり"
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" role="radiogroup" aria-label="画質仕上げプリセット">
+                            <button type="button" data-finish="auto" data-finish-label="自動（おすすめ）"
                                 class="finish-preset-btn active text-left p-3.5 rounded-xl border-2 transition-all border-emerald-500 bg-emerald-500/5 dark:bg-emerald-500/10 ring-1 ring-emerald-500/30">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span class="font-bold text-sm text-stone-900 dark:text-white flex items-center gap-1.5">
-                                        くっきり
-                                        <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500 text-white font-bold">標準</span>
-                                    </span>
-                                    <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">画面録画・文字向け</span>
+                                <div class="flex items-center justify-between gap-1.5">
+                                    <span class="font-bold text-sm text-stone-900 dark:text-white">自動</span>
+                                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500 text-white font-bold">おすすめ</span>
                                 </div>
-                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">ノイズなしでUIや細い文字を鮮明に保つ</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">実写と画面録画を自動判別して最適化</p>
                             </button>
 
                             <button type="button" data-finish="smooth" data-finish-label="なめらか"
                                 class="finish-preset-btn text-left p-3.5 rounded-xl border-2 transition-all border-warm-200 dark:border-matte-700 bg-warm-50/40 dark:bg-matte-800/40 hover:border-emerald-400">
-                                <div class="flex items-center justify-between gap-2">
+                                <div class="flex items-center justify-between gap-1.5">
                                     <span class="font-bold text-sm text-stone-900 dark:text-white">なめらか</span>
-                                    <span class="text-[11px] font-semibold text-stone-400 dark:text-stone-500">写真・グラデ向け</span>
+                                    <span class="text-[10px] font-semibold text-stone-400 dark:text-stone-500">実写・カメラ</span>
                                 </div>
-                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">控えめな誤差拡散で色の段差を抑える</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Sierra誤差拡散で木目や影の段差を解消</p>
+                            </button>
+
+                            <button type="button" data-finish="crisp" data-finish-label="くっきり"
+                                class="finish-preset-btn text-left p-3.5 rounded-xl border-2 transition-all border-warm-200 dark:border-matte-700 bg-warm-50/40 dark:bg-matte-800/40 hover:border-emerald-400">
+                                <div class="flex items-center justify-between gap-1.5">
+                                    <span class="font-bold text-sm text-stone-900 dark:text-white">くっきり</span>
+                                    <span class="text-[10px] font-semibold text-stone-400 dark:text-stone-500">画面録画・文字</span>
+                                </div>
+                                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">ディザOFFで細い文字やUIをシャープに</p>
                             </button>
                         </div>
                     </div>
@@ -744,18 +744,20 @@
         'use strict';
 
         // ============================================================
-        // 1. 高画質・省メモリ・ストリーミング式 純JavaScript製 GIF89aエンコーダー
-        //    - Median Cut（メディアンカット）適応型256色量子化（単色/少色でも安全）
-        //    - 各フレームに最適な256色 Local Color Table（768バイト）を埋め込み
-        //    - 知覚重み付き色差 (2*dR^2 + 4*dG^2 + 3*dB^2) + 5-bit RGB 3Dキャッシュ
-        //    - 「くっきり（ディザなし）」/「なめらか（蛇行Floyd-Steinberg 70%）」
+        // 1. フル8-bit高精度・ストリーミング式 純JavaScript製 GIF89aエンコーダー
+        //    - 5-bit丸め・粗い3D LUTを完全廃止し、フル8-bit RGBで高精度量子化
+        //    - 知覚重み(R:2, G:4, B:3)付き分散ベース Median Cut（最大16,384サンプル）
+        //    - 2回の簡易K-Meansセントロイド微調整（木目・金属・肌の中間色を忠実再現）
+        //    - 輝度(Y)ソート＋二分探索＋上下枝刈りによる厳密・高速8-bitマッピング
+        //    - 「なめらか」: 蛇行Sierra-2-4A誤差拡散（85%強度、±48クランプ）
+        //    - 「くっきり」: ディザリングOFFでテキスト・UIの輪郭を保持
         //    - LZW圧縮（9〜12bit可変幅、Clear=256、EOI=257、255バイトサブブロック）
         // ============================================================
         class PureGifEncoder {
-            constructor(width, height, finishMode = 'crisp') {
+            constructor(width, height, finishMode = 'smooth') {
                 this.width = Math.max(1, Math.floor(width));
                 this.height = Math.max(1, Math.floor(height));
-                this.finishMode = finishMode === 'smooth' ? 'smooth' : 'crisp';
+                this.finishMode = finishMode === 'crisp' ? 'crisp' : 'smooth';
                 this.chunks = [];
                 this.frameCount = 0;
                 this._writeHeader();
@@ -783,97 +785,130 @@
                 ]));
             }
 
-            // Median Cut 適応型256色パレット生成（常に768バイト保証・空バケット/無限ループ防止）
-            _buildMedianCutPalette(rgba) {
+            // フル8-bit RGBサンプル抽出（最大16,384ピクセル）＋分散ベースMedian Cut＋K-Means微調整
+            _buildHighPrecisionPalette(rgba) {
                 const palette = new Uint8Array(256 * 3);
-                const histSize = 32768; // 32 x 32 x 32 (5-bit RGB)
-                const counts = new Uint32Array(histSize);
-                const sumR = new Float64Array(histSize);
-                const sumG = new Float64Array(histSize);
-                const sumB = new Float64Array(histSize);
-
                 const totalPixels = this.width * this.height;
-                const maxP = Math.min(totalPixels * 4, rgba.length);
-                for (let p = 0; p < maxP; p += 4) {
+                const maxSamples = 16384;
+                const step = totalPixels > maxSamples ? (totalPixels / maxSamples) : 1;
+                const sampleCount = Math.min(totalPixels, maxSamples);
+
+                // フル8-bitサンプル配列を構築
+                const sampleR = new Uint8Array(sampleCount);
+                const sampleG = new Uint8Array(sampleCount);
+                const sampleB = new Uint8Array(sampleCount);
+
+                const uniqueMap = new Map();
+                let exceeded256 = false;
+                const maxLen = rgba.length;
+
+                for (let i = 0; i < sampleCount; i++) {
+                    const px = Math.min(totalPixels - 1, Math.floor(i * step));
+                    const p = px << 2;
+                    if (p + 2 >= maxLen) break;
                     const r = rgba[p];
                     const g = rgba[p + 1];
                     const b = rgba[p + 2];
-                    const bin = ((r >> 3) << 10) | ((g >> 3) << 5) | (b >> 3);
-                    counts[bin]++;
-                    sumR[bin] += r;
-                    sumG[bin] += g;
-                    sumB[bin] += b;
-                }
+                    sampleR[i] = r;
+                    sampleG[i] = g;
+                    sampleB[i] = b;
 
-                const entries = [];
-                for (let bin = 0; bin < histSize; bin++) {
-                    const c = counts[bin];
-                    if (c > 0) {
-                        entries.push({
-                            r: sumR[bin] / c,
-                            g: sumG[bin] / c,
-                            b: sumB[bin] / c,
-                            count: c
-                        });
+                    if (!exceeded256) {
+                        const key = (r << 16) | (g << 8) | b;
+                        if (!uniqueMap.has(key)) {
+                            uniqueMap.set(key, true);
+                            if (uniqueMap.size > 256) exceeded256 = true;
+                        }
                     }
                 }
 
-                // 空フレーム対策（念のため黒1色を返す）
-                if (entries.length === 0) {
-                    return { palette, colorCount: 1 };
+                // 空フレーム対策
+                if (sampleCount === 0 || uniqueMap.size === 0) {
+                    return { palette, luma: new Float32Array(1), colorCount: 1 };
                 }
 
-                // ユニーク色が256色以下ならそのまま完全再現（単色画面もここで安全に処理）
-                if (entries.length <= 256) {
-                    const n = entries.length;
+                // サンプル内のユニーク色が256色以下なら完全再現（単色・フラット画面録画に最適）
+                if (!exceeded256 && uniqueMap.size <= 256) {
+                    const colors = [];
+                    uniqueMap.forEach((_, key) => {
+                        const r = (key >> 16) & 0xFF;
+                        const g = (key >> 8) & 0xFF;
+                        const b = key & 0xFF;
+                        colors.push({ r, g, b, y: 0.299 * r + 0.587 * g + 0.114 * b });
+                    });
+                    colors.sort((a, b) => a.y - b.y);
+                    const n = colors.length;
+                    const luma = new Float32Array(n);
                     for (let i = 0; i < n; i++) {
-                        palette[i * 3] = Math.max(0, Math.min(255, Math.round(entries[i].r)));
-                        palette[i * 3 + 1] = Math.max(0, Math.min(255, Math.round(entries[i].g)));
-                        palette[i * 3 + 2] = Math.max(0, Math.min(255, Math.round(entries[i].b)));
+                        palette[i * 3] = colors[i].r;
+                        palette[i * 3 + 1] = colors[i].g;
+                        palette[i * 3 + 2] = colors[i].b;
+                        luma[i] = colors[i].y;
                     }
-                    return { palette, colorCount: n };
+                    return { palette, luma, colorCount: n };
                 }
 
-                const createBox = (start, end) => {
-                    let minR = 255, maxR = 0;
-                    let minG = 255, maxG = 0;
-                    let minB = 255, maxB = 0;
-                    let totalCount = 0;
+                // インデックス配列（Median Cut でソート・分割対象）
+                const idxArr = new Int32Array(sampleCount);
+                for (let i = 0; i < sampleCount; i++) idxArr[i] = i;
 
+                // 知覚重み (R:2, G:4, B:3) 付き分散ボックス生成
+                const createBox = (start, end) => {
+                    const count = end - start;
+                    if (count <= 0) {
+                        return { start, end, count: 0, axis: 0, priority: 0, canSplit: false, mr: 0, mg: 0, mb: 0 };
+                    }
+                    let sumR = 0, sumG = 0, sumB = 0;
                     for (let i = start; i < end; i++) {
-                        const e = entries[i];
-                        if (e.r < minR) minR = e.r;
-                        if (e.r > maxR) maxR = e.r;
-                        if (e.g < minG) minG = e.g;
-                        if (e.g > maxG) maxG = e.g;
-                        if (e.b < minB) minB = e.b;
-                        if (e.b > maxB) maxB = e.b;
-                        totalCount += e.count;
+                        const si = idxArr[i];
+                        sumR += sampleR[si];
+                        sumG += sampleG[si];
+                        sumB += sampleB[si];
+                    }
+                    const inv = 1 / count;
+                    const mr = sumR * inv;
+                    const mg = sumG * inv;
+                    const mb = sumB * inv;
+
+                    let varR = 0, varG = 0, varB = 0;
+                    for (let i = start; i < end; i++) {
+                        const si = idxArr[i];
+                        const dr = sampleR[si] - mr;
+                        const dg = sampleG[si] - mg;
+                        const db = sampleB[si] - mb;
+                        varR += dr * dr;
+                        varG += dg * dg;
+                        varB += db * db;
                     }
 
-                    const rangeR = (maxR - minR) * 1.414;
-                    const rangeG = (maxG - minG) * 2.0;
-                    const rangeB = (maxB - minB) * 1.732;
-                    let axis = 0;
-                    let maxRange = rangeR;
-                    if (rangeG > maxRange) { axis = 1; maxRange = rangeG; }
-                    if (rangeB > maxRange) { axis = 2; maxRange = rangeB; }
+                    // 知覚重み付き総二乗誤差（SSE）を優先度に使用
+                    const wVarR = 2 * varR;
+                    const wVarG = 4 * varG;
+                    const wVarB = 3 * varB;
+                    const totalWeightedSSE = wVarR + wVarG + wVarB;
 
-                    const canSplit = (end - start) > 1;
+                    let axis = 0;
+                    let maxAxisVar = wVarR;
+                    if (wVarG > maxAxisVar) { axis = 1; maxAxisVar = wVarG; }
+                    if (wVarB > maxAxisVar) { axis = 2; maxAxisVar = wVarB; }
+
+                    const canSplit = count > 1 && totalWeightedSSE > 1.0;
                     return {
                         start,
                         end,
-                        totalCount,
+                        count,
                         axis,
+                        priority: canSplit ? totalWeightedSSE : 0,
                         canSplit,
-                        priority: canSplit ? ((maxRange + 0.001) * Math.log2(totalCount + 1)) : 0
+                        mr,
+                        mg,
+                        mb
                     };
                 };
 
-                const boxes = [createBox(0, entries.length)];
-
-                // 最大256ボックスまで安全に分割（無限ループガード付き）
+                const boxes = [createBox(0, sampleCount)];
                 let guard = 0;
+
                 while (boxes.length < 256 && guard < 512) {
                     guard++;
                     let bestIdx = -1;
@@ -894,24 +929,19 @@
                         continue;
                     }
 
-                    const sub = entries.slice(box.start, box.end);
+                    const sub = idxArr.subarray(box.start, box.end);
                     const axis = box.axis;
-                    if (axis === 0) sub.sort((a, b) => a.r - b.r);
-                    else if (axis === 1) sub.sort((a, b) => a.g - b.g);
-                    else sub.sort((a, b) => a.b - b.b);
+                    if (axis === 0) sub.sort((a, b) => sampleR[a] - sampleR[b]);
+                    else if (axis === 1) sub.sort((a, b) => sampleG[a] - sampleG[b]);
+                    else sub.sort((a, b) => sampleB[a] - sampleB[b]);
 
-                    for (let i = 0; i < len; i++) {
-                        entries[box.start + i] = sub[i];
-                    }
-
-                    // ピクセル数の中央値で2分割（必ず左右とも1要素以上になるようクランプ）
-                    const halfCount = box.totalCount * 0.5;
-                    let acc = 0;
-                    let splitOffset = 1;
-                    for (let i = 0; i < len - 1; i++) {
-                        acc += sub[i].count;
-                        if (acc >= halfCount) {
-                            splitOffset = i + 1;
+                    // 平均値を境界に分割（偏りすぎ防止のため最低1要素は左右に残す）
+                    const meanVal = axis === 0 ? box.mr : (axis === 1 ? box.mg : box.mb);
+                    const chArr = axis === 0 ? sampleR : (axis === 1 ? sampleG : sampleB);
+                    let splitOffset = len >> 1;
+                    for (let i = 1; i < len - 1; i++) {
+                        if (chArr[sub[i]] >= meanVal) {
+                            splitOffset = i;
                             break;
                         }
                     }
@@ -922,70 +952,243 @@
                     boxes.push(createBox(mid, box.end));
                 }
 
-                const colorCount = Math.min(256, boxes.length);
+                // 初期セントロイド配列
+                const colorCount = Math.max(1, Math.min(256, boxes.length));
+                const centR = new Float32Array(colorCount);
+                const centG = new Float32Array(colorCount);
+                const centB = new Float32Array(colorCount);
+                const centY = new Float32Array(colorCount);
                 for (let i = 0; i < colorCount; i++) {
-                    const box = boxes[i];
-                    let rSum = 0, gSum = 0, bSum = 0, cSum = 0;
-                    for (let j = box.start; j < box.end; j++) {
-                        const e = entries[j];
-                        rSum += e.r * e.count;
-                        gSum += e.g * e.count;
-                        bSum += e.b * e.count;
-                        cSum += e.count;
-                    }
-                    const inv = cSum > 0 ? 1 / cSum : 0;
-                    palette[i * 3] = Math.max(0, Math.min(255, Math.round(rSum * inv)));
-                    palette[i * 3 + 1] = Math.max(0, Math.min(255, Math.round(gSum * inv)));
-                    palette[i * 3 + 2] = Math.max(0, Math.min(255, Math.round(bSum * inv)));
+                    centR[i] = boxes[i].mr;
+                    centG[i] = boxes[i].mg;
+                    centB[i] = boxes[i].mb;
                 }
 
-                return { palette, colorCount: Math.max(1, colorCount) };
+                // 簡易K-Meansセントロイド微調整（2回反復・輝度ソート二分探索で高速化）
+                const kSampleStride = sampleCount > 4096 ? Math.floor(sampleCount / 4096) : 1;
+                const order = new Int32Array(colorCount);
+                const sortedR = new Float32Array(colorCount);
+                const sortedG = new Float32Array(colorCount);
+                const sortedB = new Float32Array(colorCount);
+                const sortedY = new Float32Array(colorCount);
+                const accR = new Float64Array(colorCount);
+                const accG = new Float64Array(colorCount);
+                const accB = new Float64Array(colorCount);
+                const accC = new Int32Array(colorCount);
+
+                for (let iter = 0; iter < 2; iter++) {
+                    for (let i = 0; i < colorCount; i++) {
+                        centY[i] = 0.299 * centR[i] + 0.587 * centG[i] + 0.114 * centB[i];
+                        order[i] = i;
+                    }
+                    order.sort((a, b) => centY[a] - centY[b]);
+                    for (let i = 0; i < colorCount; i++) {
+                        const oi = order[i];
+                        sortedR[i] = centR[oi];
+                        sortedG[i] = centG[oi];
+                        sortedB[i] = centB[oi];
+                        sortedY[i] = centY[oi];
+                    }
+
+                    accR.fill(0);
+                    accG.fill(0);
+                    accB.fill(0);
+                    accC.fill(0);
+
+                    for (let s = 0; s < sampleCount; s += kSampleStride) {
+                        const r = sampleR[s];
+                        const g = sampleG[s];
+                        const b = sampleB[s];
+                        const y = 0.299 * r + 0.587 * g + 0.114 * b;
+
+                        // 二分探索で輝度最近傍インデックスを取得
+                        let lo = 0, hi = colorCount - 1;
+                        while (lo < hi) {
+                            const mid = (lo + hi) >> 1;
+                            if (sortedY[mid] < y) lo = mid + 1;
+                            else hi = mid;
+                        }
+
+                        let bestIdx = lo;
+                        let dr = r - sortedR[lo];
+                        let dg = g - sortedG[lo];
+                        let db = b - sortedB[lo];
+                        let bestDist = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
+
+                        let left = lo - 1;
+                        let right = lo + 1;
+                        while (left >= 0 || right < colorCount) {
+                            if (left >= 0) {
+                                const dy = y - sortedY[left];
+                                if (dy * dy * 7.2 >= bestDist) {
+                                    left = -1;
+                                } else {
+                                    dr = r - sortedR[left];
+                                    dg = g - sortedG[left];
+                                    db = b - sortedB[left];
+                                    const d = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
+                                    if (d < bestDist) { bestDist = d; bestIdx = left; }
+                                    left--;
+                                }
+                            }
+                            if (right < colorCount) {
+                                const dy = sortedY[right] - y;
+                                if (dy * dy * 7.2 >= bestDist) {
+                                    right = colorCount;
+                                } else {
+                                    dr = r - sortedR[right];
+                                    dg = g - sortedG[right];
+                                    db = b - sortedB[right];
+                                    const d = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
+                                    if (d < bestDist) { bestDist = d; bestIdx = right; }
+                                    right++;
+                                }
+                            }
+                        }
+
+                        accR[bestIdx] += r;
+                        accG[bestIdx] += g;
+                        accB[bestIdx] += b;
+                        accC[bestIdx]++;
+                    }
+
+                    // 空クラスタは前回のセントロイドを維持（空バケット対策）
+                    for (let i = 0; i < colorCount; i++) {
+                        if (accC[i] > 0) {
+                            const inv = 1 / accC[i];
+                            centR[i] = accR[i] * inv;
+                            centG[i] = accG[i] * inv;
+                            centB[i] = accB[i] * inv;
+                        } else {
+                            centR[i] = sortedR[i];
+                            centG[i] = sortedG[i];
+                            centB[i] = sortedB[i];
+                        }
+                    }
+                }
+
+                // 最終パレットを輝度昇順にソートして格納
+                const finalColors = [];
+                for (let i = 0; i < colorCount; i++) {
+                    const r = Math.max(0, Math.min(255, Math.round(centR[i])));
+                    const g = Math.max(0, Math.min(255, Math.round(centG[i])));
+                    const b = Math.max(0, Math.min(255, Math.round(centB[i])));
+                    finalColors.push({ r, g, b, y: 0.299 * r + 0.587 * g + 0.114 * b });
+                }
+                finalColors.sort((a, b) => a.y - b.y);
+
+                const luma = new Float32Array(colorCount);
+                for (let i = 0; i < colorCount; i++) {
+                    palette[i * 3] = finalColors[i].r;
+                    palette[i * 3 + 1] = finalColors[i].g;
+                    palette[i * 3 + 2] = finalColors[i].b;
+                    luma[i] = finalColors[i].y;
+                }
+
+                return { palette, luma, colorCount };
             }
 
-            // 知覚重み付き色差 (2*dR^2 + 4*dG^2 + 3*dB^2) + 5-bit RGB 3Dキャッシュ
-            _mapPixelsToPalette(rgba, palette, colorCount) {
+            // フル8-bit厳密探索（輝度ソート二分探索＋上下枝刈り）＆ 蛇行Sierra-2-4A誤差拡散
+            _mapPixelsToPalette(rgba, palette, luma, colorCount) {
                 const w = this.width;
                 const h = this.height;
                 const totalPixels = w * h;
                 const indices = new Uint8Array(totalPixels);
-                const cache = new Int16Array(32768);
-                cache.fill(-1);
 
-                const findNearest = (r, g, b) => {
-                    const key = ((r >> 3) << 10) | ((g >> 3) << 5) | (b >> 3);
-                    const cached = cache[key];
-                    if (cached !== -1) return cached;
+                // 高速アクセス用にパレットを分離配列化
+                const palR = new Uint8Array(colorCount);
+                const palG = new Uint8Array(colorCount);
+                const palB = new Uint8Array(colorCount);
+                for (let i = 0, p = 0; i < colorCount; i++, p += 3) {
+                    palR[i] = palette[p];
+                    palG[i] = palette[p + 1];
+                    palB[i] = palette[p + 2];
+                }
 
-                    let bestIdx = 0;
-                    let bestDist = Infinity;
-                    for (let i = 0, p = 0; i < colorCount; i++, p += 3) {
-                        const dr = r - palette[p];
-                        const dg = g - palette[p + 1];
-                        const db = b - palette[p + 2];
-                        const dist = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
-                        if (dist < bestDist) {
-                            bestDist = dist;
-                            bestIdx = i;
-                            if (dist === 0) break;
+                // 輝度二分探索＋上下枝刈り（Cauchy-Schwarz下界: dist >= 7.39 * dy^2, 安全係数7.2）
+                const findNearestExact = (r, g, b) => {
+                    const y = 0.299 * r + 0.587 * g + 0.114 * b;
+                    let lo = 0;
+                    let hi = colorCount - 1;
+                    while (lo < hi) {
+                        const mid = (lo + hi) >> 1;
+                        if (luma[mid] < y) lo = mid + 1;
+                        else hi = mid;
+                    }
+
+                    let bestIdx = lo;
+                    let dr = r - palR[lo];
+                    let dg = g - palG[lo];
+                    let db = b - palB[lo];
+                    let bestDist = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
+                    if (bestDist === 0) return bestIdx;
+
+                    let left = lo - 1;
+                    let right = lo + 1;
+
+                    while (left >= 0 || right < colorCount) {
+                        if (left >= 0) {
+                            const dy = y - luma[left];
+                            if (dy * dy * 7.2 >= bestDist) {
+                                left = -1;
+                            } else {
+                                dr = r - palR[left];
+                                dg = g - palG[left];
+                                db = b - palB[left];
+                                const d = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
+                                if (d < bestDist) {
+                                    bestDist = d;
+                                    bestIdx = left;
+                                    if (d === 0) return bestIdx;
+                                }
+                                left--;
+                            }
+                        }
+                        if (right < colorCount) {
+                            const dy = luma[right] - y;
+                            if (dy * dy * 7.2 >= bestDist) {
+                                right = colorCount;
+                            } else {
+                                dr = r - palR[right];
+                                dg = g - palG[right];
+                                db = b - palB[right];
+                                const d = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
+                                if (d < bestDist) {
+                                    bestDist = d;
+                                    bestIdx = right;
+                                    if (d === 0) return bestIdx;
+                                }
+                                right++;
+                            }
                         }
                     }
-                    cache[key] = bestIdx;
+
                     return bestIdx;
                 };
 
-                if (this.finishMode !== 'smooth') {
-                    // 「くっきり」モード：ディザリングなし
+                if (this.finishMode === 'crisp') {
+                    // 「くっきり」モード：ディザリングなし（直前ピクセル一致の超高速キャッシュ付き）
+                    let lastKey = -1;
+                    let lastIdx = 0;
                     for (let i = 0, p = 0; i < totalPixels; i++, p += 4) {
-                        indices[i] = findNearest(rgba[p], rgba[p + 1], rgba[p + 2]);
+                        const r = rgba[p];
+                        const g = rgba[p + 1];
+                        const b = rgba[p + 2];
+                        const key = (r << 16) | (g << 8) | b;
+                        if (key === lastKey) {
+                            indices[i] = lastIdx;
+                        } else {
+                            lastIdx = findNearestExact(r, g, b);
+                            lastKey = key;
+                            indices[i] = lastIdx;
+                        }
                     }
                     return indices;
                 }
 
-                // 「なめらか」モード：蛇行スキャン Floyd-Steinberg 誤差拡散（強度70%、誤差クランプ±48）
-                const strength = 0.70;
-                const clampErr = (v) => (v < -48 ? -48 : (v > 48 ? 48 : v));
-                const clampByte = (v) => (v < 0 ? 0 : (v > 255 ? 255 : (v + 0.5) | 0));
-
+                // 「なめらか」モード：蛇行スキャン Sierra-2-4A 誤差拡散（強度85%、誤差クランプ±48）
+                // カーネル: 右隣(2/4=0.50), 下左(1/4=0.25), 真下(1/4=0.25)
+                const strength = 0.85;
                 let curR = new Float32Array(w + 2);
                 let curG = new Float32Array(w + 2);
                 let curB = new Float32Array(w + 2);
@@ -1009,36 +1212,43 @@
                         const p = idx << 2;
                         const cx = x + 1;
 
-                        const r = clampByte(rgba[p] + curR[cx]);
-                        const g = clampByte(rgba[p + 1] + curG[cx]);
-                        const b = clampByte(rgba[p + 2] + curB[cx]);
+                        let r = rgba[p] + curR[cx];
+                        let g = rgba[p + 1] + curG[cx];
+                        let b = rgba[p + 2] + curB[cx];
+                        r = r < 0 ? 0 : (r > 255 ? 255 : r);
+                        g = g < 0 ? 0 : (g > 255 ? 255 : g);
+                        b = b < 0 ? 0 : (b > 255 ? 255 : b);
 
-                        const palIdx = findNearest(r, g, b);
+                        const palIdx = findNearestExact(r, g, b);
                         indices[idx] = palIdx;
 
-                        const pp = palIdx * 3;
-                        const er = clampErr(r - palette[pp]) * strength;
-                        const eg = clampErr(g - palette[pp + 1]) * strength;
-                        const eb = clampErr(b - palette[pp + 2]) * strength;
+                        let er = r - palR[palIdx];
+                        let eg = g - palG[palIdx];
+                        let eb = b - palB[palIdx];
+
+                        if (er < -48) er = -48; else if (er > 48) er = 48;
+                        if (eg < -48) eg = -48; else if (eg > 48) eg = 48;
+                        if (eb < -48) eb = -48; else if (eb > 48) eb = 48;
+
+                        er *= strength;
+                        eg *= strength;
+                        eb *= strength;
 
                         const nx = cx + stepX;
                         const px = cx - stepX;
 
-                        curR[nx] += er * 0.4375;
-                        curG[nx] += eg * 0.4375;
-                        curB[nx] += eb * 0.4375;
+                        // Sierra-2-4A 拡散 (0.50, 0.25, 0.25)
+                        curR[nx] += er * 0.50;
+                        curG[nx] += eg * 0.50;
+                        curB[nx] += eb * 0.50;
 
-                        nxtR[px] += er * 0.1875;
-                        nxtG[px] += eg * 0.1875;
-                        nxtB[px] += eb * 0.1875;
+                        nxtR[px] += er * 0.25;
+                        nxtG[px] += eg * 0.25;
+                        nxtB[px] += eb * 0.25;
 
-                        nxtR[cx] += er * 0.3125;
-                        nxtG[cx] += eg * 0.3125;
-                        nxtB[cx] += eb * 0.3125;
-
-                        nxtR[nx] += er * 0.0625;
-                        nxtG[nx] += eg * 0.0625;
-                        nxtB[nx] += eb * 0.0625;
+                        nxtR[cx] += er * 0.25;
+                        nxtG[cx] += eg * 0.25;
+                        nxtB[cx] += eb * 0.25;
                     }
 
                     let tmp = curR; curR = nxtR; nxtR = tmp;
@@ -1168,10 +1378,10 @@
                     0x87
                 ]));
 
-                const { palette, colorCount } = this._buildMedianCutPalette(rgbaData);
+                const { palette, luma, colorCount } = this._buildHighPrecisionPalette(rgbaData);
                 this.chunks.push(palette);
 
-                const indices = this._mapPixelsToPalette(rgbaData, palette, colorCount);
+                const indices = this._mapPixelsToPalette(rgbaData, palette, luma, colorCount);
                 const compressed = this._lzwEncode(indices);
                 this.chunks.push(compressed);
                 this.frameCount++;
@@ -1202,749 +1412,20 @@
             // プリセット
             selectedSize: 480,
             selectedSizeLabel: 'スマホ向け（標準）',
-            selectedFinish: 'crisp',
-            selectedFinishLabel: 'くっきり',
+            selectedFinish: 'auto',
+            selectedFinishLabel: '自動（おすすめ）',
             selectedFps: 12,
             selectedSpeed: 1,
             selectedSpeedLabel: '1.0x 等速',
             enableDedup: true,
-            // 区間プレビュー再生
-            isRangePlaying: false,
-            // 画面録画
-            mediaRecorder: null,
-            recordedChunks: [],
-            recordStream: null,
-            recordTimerId: null,
-            recordStartTime: 0,
-            lastRecordDurationSec: 0,
-            // 変換処理
-            isConverting: false,
-            cancelRequested: false,
-            currentResultUrl: null,
-            currentResultName: '',
-            // 変換履歴
-            historyItems: [],
-            historyObjectUrls: new Map(),
-            useMemoryFallback: false,
-            db: null,
-            modalItem: null,
-            toastTimerId: null
-        };
-
-        // ============================================================
-        // 3. DOM要素参照（全ID完全一致）
-        // ============================================================
-        const el = {
-            tabCreate: document.getElementById('tab-create'),
-            tabHistory: document.getElementById('tab-history'),
-            historyBadge: document.getElementById('history-badge'),
-            viewCreate: document.getElementById('view-create'),
-            viewHistory: document.getElementById('view-history'),
-            btnThemeToggle: document.getElementById('btn-theme-toggle'),
-            viewportModeText: document.getElementById('viewport-mode-text'),
-            // アラートバナー
-            alertBanner: document.getElementById('alert-banner'),
-            alertTitle: document.getElementById('alert-title'),
-            alertMessage: document.getElementById('alert-message'),
-            btnCloseAlert: document.getElementById('btn-close-alert'),
-            // 入力・録画
-            inputCard: document.getElementById('input-card'),
-            dropZone: document.getElementById('drop-zone'),
-            fileInput: document.getElementById('file-input'),
-            btnStartRecord: document.getElementById('btn-start-record'),
-            recordingCard: document.getElementById('recording-card'),
-            recordTimer: document.getElementById('record-timer'),
-            liveRecordPreview: document.getElementById('live-record-preview'),
-            btnStopRecord: document.getElementById('btn-stop-record'),
-            // 動画プレビュー・トリミング
-            videoCard: document.getElementById('video-card'),
-            videoAspectBadge: document.getElementById('video-aspect-badge'),
-            videoFilename: document.getElementById('video-filename'),
-            btnResetVideo: document.getElementById('btn-reset-video'),
-            videoPreviewWrapper: document.getElementById('video-preview-wrapper'),
-            videoPreview: document.getElementById('video-preview'),
-            metaOriginal: document.getElementById('meta-original'),
-            metaDuration: document.getElementById('meta-duration'),
-            metaOutput: document.getElementById('meta-output'),
-            trimStart: document.getElementById('trim-start'),
-            trimEnd: document.getElementById('trim-end'),
-            trimStartSlider: document.getElementById('trim-start-slider'),
-            trimEndSlider: document.getElementById('trim-end-slider'),
-            btnSetStart: document.getElementById('btn-set-start'),
-            btnSetEnd: document.getElementById('btn-set-end'),
-            btnPreviewRange: document.getElementById('btn-preview-range'),
-            btnPreviewRangeText: document.getElementById('btn-preview-range-text'),
-            trimDurationLabel: document.getElementById('trim-duration-label'),
-            // ループ情報・途切れ警告
-            loopSpeedChip: document.getElementById('loop-speed-chip'),
-            loopSecondsValue: document.getElementById('loop-seconds-value'),
-            estSizeBadge: document.getElementById('est-size-badge'),
-            loopFormulaHint: document.getElementById('loop-formula-hint'),
-            metricSourceDuration: document.getElementById('metric-source-duration'),
-            metricFrames: document.getElementById('metric-frames'),
-            metricResolution: document.getElementById('metric-resolution'),
-            metricEstSize: document.getElementById('metric-est-size'),
-            statusOkBadge: document.getElementById('status-ok-badge'),
-            statusOkText: document.getElementById('status-ok-text'),
-            truncationWarningPanel: document.getElementById('truncation-warning-panel'),
-            truncationWarningTitle: document.getElementById('truncation-warning-title'),
-            truncationWarningList: document.getElementById('truncation-warning-list'),
-            quickFixButtons: document.getElementById('quick-fix-buttons'),
+// ... existing code ... -->
             // プリセット・トグル・変換
             sizePresetBtns: document.querySelectorAll('.size-preset-btn'),
             finishPresetBtns: document.querySelectorAll('.finish-preset-btn'),
+            autoFinishBadge: document.getElementById('auto-finish-badge'),
             fpsPresetBtns: document.querySelectorAll('.fps-preset-btn'),
             speedPresetBtns: document.querySelectorAll('.speed-preset-btn'),
-            toggleDedup: document.getElementById('toggle-dedup'),
-            toggleDedupKnob: document.getElementById('toggle-dedup-knob'),
-            btnConvert: document.getElementById('btn-convert'),
-            btnConvertLabel: document.getElementById('btn-convert-label'),
-            progressContainer: document.getElementById('progress-container'),
-            progressStatus: document.getElementById('progress-status'),
-            progressPercent: document.getElementById('progress-percent'),
-            progressBar: document.getElementById('progress-bar'),
-            progressDedupInfo: document.getElementById('progress-dedup-info'),
-            btnCancelConvert: document.getElementById('btn-cancel-convert'),
-            // 結果
-            resultCard: document.getElementById('result-card'),
-            resultMeta: document.getElementById('result-meta'),
-            resultDedupBanner: document.getElementById('result-dedup-banner'),
-            resultDedupText: document.getElementById('result-dedup-text'),
-            gifResultImg: document.getElementById('gif-result-img'),
-            btnDownloadResult: document.getElementById('btn-download-result'),
-            btnGotoHistory: document.getElementById('btn-goto-history'),
-            // 履歴
-            historyStorageNote: document.getElementById('history-storage-note'),
-            btnClearHistory: document.getElementById('btn-clear-history'),
-            historyEmpty: document.getElementById('history-empty'),
-            historyList: document.getElementById('history-list'),
-            btnBackToCreate: document.getElementById('btn-back-to-create'),
-            // モーダル・トースト
-            previewModal: document.getElementById('preview-modal'),
-            modalTitle: document.getElementById('modal-title'),
-            modalMeta: document.getElementById('modal-meta'),
-            modalImg: document.getElementById('modal-img'),
-            btnCloseModal: document.getElementById('btn-close-modal'),
-            btnModalDownload: document.getElementById('btn-modal-download'),
-            confirmModal: document.getElementById('confirm-modal'),
-            btnConfirmCancel: document.getElementById('btn-confirm-cancel'),
-            btnConfirmOk: document.getElementById('btn-confirm-ok'),
-            toast: document.getElementById('toast'),
-            toastInner: document.getElementById('toast-inner')
-        };
-
-        // ============================================================
-        // 4. ユーティリティ関数（通知・フォーマット・ダウンロード・安全シーク）
-        // ============================================================
-        function showAlert(title, message) {
-            el.alertTitle.textContent = title || '注意';
-            el.alertMessage.textContent = message || '';
-            el.alertBanner.classList.remove('hidden');
-            el.alertBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function hideAlert() {
-            el.alertBanner.classList.add('hidden');
-        }
-
-        el.btnCloseAlert.addEventListener('click', hideAlert);
-
-        function showToast(message) {
-            el.toastInner.textContent = message;
-            el.toast.classList.remove('opacity-0', 'translate-y-2');
-            el.toast.classList.add('opacity-100', 'translate-y-0');
-            if (state.toastTimerId) clearTimeout(state.toastTimerId);
-            state.toastTimerId = setTimeout(() => {
-                el.toast.classList.remove('opacity-100', 'translate-y-0');
-                el.toast.classList.add('opacity-0', 'translate-y-2');
-            }, 2600);
-        }
-
-        function formatBytes(bytes) {
-            if (!isFinite(bytes) || bytes <= 0) return '0 B';
-            if (bytes < 1024) return `${bytes} B`;
-            if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-            return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
-        }
-
-        function formatDateTime(ts) {
-            const d = new Date(ts);
-            const pad = (n) => String(n).padStart(2, '0');
-            return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
-        }
-
-        function buildGifFileName(ts = Date.now()) {
-            const d = new Date(ts);
-            const pad = (n) => String(n).padStart(2, '0');
-            return `gifrun_${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}.gif`;
-        }
-
-        function triggerDownload(url, fileName) {
-            try {
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = fileName;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            } catch (err) {
-                showAlert('ダウンロードエラー', 'ファイルのダウンロードを開始できませんでした。');
-            }
-        }
-
-        function yieldToUI() {
-            return new Promise((resolve) => setTimeout(resolve, 0));
-        }
-
-        // タイムアウト付き安全シーク（同位置シークやseeked未発火でもフリーズしない）
-        function seekTo(video, targetSec, timeoutMs = 1200) {
-            return new Promise((resolve) => {
-                const clamped = Math.max(0, isFinite(video.duration) && video.duration > 0 ? Math.min(targetSec, video.duration - 0.001) : targetSec);
-                if (Math.abs((video.currentTime || 0) - clamped) < 0.004 && video.readyState >= 2) {
-                    resolve();
-                    return;
-                }
-                let done = false;
-                const finish = () => {
-                    if (done) return;
-                    done = true;
-                    clearTimeout(timer);
-                    video.removeEventListener('seeked', onSeeked);
-                    video.removeEventListener('error', onError);
-                    resolve();
-                };
-                const onSeeked = () => finish();
-                const onError = () => finish();
-                const timer = setTimeout(finish, timeoutMs);
-
-                video.addEventListener('seeked', onSeeked, { once: true });
-                video.addEventListener('error', onError, { once: true });
-                try {
-                    video.currentTime = clamped;
-                } catch (_) {
-                    finish();
-                }
-            });
-        }
-
-        // 録画WebMなどで video.duration が Infinity / NaN になる問題へのフォールバック解決
-        async function resolveVideoDuration(video, fallbackSec = 0) {
-            if (isFinite(video.duration) && video.duration > 0) {
-                return video.duration;
-            }
-            // 一時的に巨大時刻へシークしてブラウザに実長を算出させる
-            await new Promise((resolve) => {
-                let finished = false;
-                const done = () => {
-                    if (finished) return;
-                    finished = true;
-                    clearTimeout(timer);
-                    video.removeEventListener('timeupdate', onUpdate);
-                    video.removeEventListener('seeked', onUpdate);
-                    resolve();
-                };
-                const onUpdate = () => done();
-                const timer = setTimeout(done, 1800);
-                video.addEventListener('timeupdate', onUpdate, { once: true });
-                video.addEventListener('seeked', onUpdate, { once: true });
-                try {
-                    video.currentTime = 1e101;
-                } catch (_) {
-                    done();
-                }
-            });
-
-            let resolved = 0;
-            if (isFinite(video.duration) && video.duration > 0) {
-                resolved = video.duration;
-            } else if (isFinite(video.currentTime) && video.currentTime > 0 && video.currentTime < 1e6) {
-                resolved = video.currentTime;
-            } else if (fallbackSec > 0) {
-                resolved = fallbackSec;
-            } else {
-                resolved = 5.0;
-            }
-
-            // 先頭へ戻す
-            await seekTo(video, 0, 800);
-            return Math.max(0.2, resolved);
-        }
-
-        // ============================================================
-        // 5. テーマ切替・画面比率自動最適化・タブ切替
-        // ============================================================
-        function initTheme() {
-            let saved = null;
-            try { saved = localStorage.getItem('gifrun_theme'); } catch (_) {}
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = saved ? (saved === 'dark') : prefersDark;
-            document.documentElement.classList.toggle('dark', isDark);
-        }
-
-        el.btnThemeToggle.addEventListener('click', () => {
-            const nextDark = !document.documentElement.classList.contains('dark');
-            document.documentElement.classList.toggle('dark', nextDark);
-            try { localStorage.setItem('gifrun_theme', nextDark ? 'dark' : 'light'); } catch (_) {}
-        });
-
-        function updateViewportOptimization() {
-            const w = window.innerWidth;
-            const h = window.innerHeight;
-            let label = 'PCワイド最適化';
-            if (w < 640) {
-                label = 'スマホ縦最適化';
-            } else if (w < 1024) {
-                label = w >= h ? 'タブレット横最適化' : 'タブレット最適化';
-            }
-            el.viewportModeText.textContent = label;
-            adjustVideoPreviewBoxHeight();
-        }
-
-        function adjustVideoPreviewBoxHeight() {
-            const vh = window.innerHeight;
-            const w = window.innerWidth;
-            let targetHeight = 280;
-            if (state.videoOrientation === 'portrait') {
-                targetHeight = w >= 1024 ? Math.min(440, Math.round(vh * 0.48)) : Math.min(380, Math.round(vh * 0.45));
-            } else if (state.videoOrientation === 'square') {
-                targetHeight = Math.min(340, Math.round(vh * 0.40));
-            } else {
-                targetHeight = w >= 1024 ? Math.min(310, Math.round(vh * 0.36)) : 240;
-            }
-            el.videoPreviewWrapper.style.height = `${Math.max(200, targetHeight)}px`;
-        }
-
-        window.addEventListener('resize', updateViewportOptimization);
-
-        function switchTab(tabName) {
-            state.activeTab = tabName;
-            const isCreate = tabName === 'create';
-
-            el.viewCreate.classList.toggle('hidden', !isCreate);
-            el.viewHistory.classList.toggle('hidden', isCreate);
-
-            el.tabCreate.setAttribute('aria-selected', String(isCreate));
-            el.tabHistory.setAttribute('aria-selected', String(!isCreate));
-
-            const activeCls = ['bg-white', 'dark:bg-matte-700', 'text-stone-900', 'dark:text-white', 'shadow-sm'];
-            const inactiveCls = ['text-stone-500', 'dark:text-stone-400', 'hover:text-stone-900', 'dark:hover:text-white'];
-
-            if (isCreate) {
-                el.tabCreate.classList.add(...activeCls);
-                el.tabCreate.classList.remove(...inactiveCls);
-                el.tabHistory.classList.remove(...activeCls);
-                el.tabHistory.classList.add(...inactiveCls);
-            } else {
-                el.tabHistory.classList.add(...activeCls);
-                el.tabHistory.classList.remove(...inactiveCls);
-                el.tabCreate.classList.remove(...activeCls);
-                el.tabCreate.classList.add(...inactiveCls);
-                renderHistoryList();
-            }
-        }
-
-        el.tabCreate.addEventListener('click', () => switchTab('create'));
-        el.tabHistory.addEventListener('click', () => switchTab('history'));
-        el.btnGotoHistory.addEventListener('click', () => switchTab('history'));
-        el.btnBackToCreate.addEventListener('click', () => switchTab('create'));
-
-        // ============================================================
-        // 6. 動画ファイル読み込み・ドラッグ＆ドロップ・PC画面録画
-        // ============================================================
-        async function loadVideoFromBlob(blob, fileName, fallbackDurationSec = 0) {
-            hideAlert();
-            stopRangePreview();
-
-            if (!blob || blob.size === 0) {
-                showAlert('動画の読み込みエラー', '選択されたファイルが空か、読み込めませんでした。');
-                return;
-            }
-
-            try {
-                if (state.videoUrl) {
-                    URL.revokeObjectURL(state.videoUrl);
-                    state.videoUrl = null;
-                }
-
-                const url = URL.createObjectURL(blob);
-                state.videoUrl = url;
-                state.originalFileName = fileName || 'video';
-
-                el.videoPreview.src = url;
-                el.videoPreview.load();
-
-                await new Promise((resolve, reject) => {
-                    const timer = setTimeout(() => resolve(), 5000);
-                    const onMeta = () => {
-                        clearTimeout(timer);
-                        el.videoPreview.removeEventListener('error', onErr);
-                        resolve();
-                    };
-                    const onErr = () => {
-                        clearTimeout(timer);
-                        el.videoPreview.removeEventListener('loadedmetadata', onMeta);
-                        reject(new Error('この動画形式はお使いのブラウザで再生・デコードできませんでした。MP4 (H.264) または WebM 形式をお試しください。'));
-                    };
-                    el.videoPreview.addEventListener('loadedmetadata', onMeta, { once: true });
-                    el.videoPreview.addEventListener('error', onErr, { once: true });
-                });
-
-                const duration = await resolveVideoDuration(el.videoPreview, fallbackDurationSec);
-                const vw = el.videoPreview.videoWidth || 640;
-                const vh = el.videoPreview.videoHeight || 360;
-
-                state.videoDuration = duration;
-                state.videoWidth = vw;
-                state.videoHeight = vh;
-
-                const orientInfo = detectVideoOrientation(vw, vh);
-                state.videoOrientation = orientInfo.orientation;
-
-                el.videoFilename.textContent = state.originalFileName;
-                el.videoAspectBadge.textContent = orientInfo.label;
-                el.metaOriginal.textContent = `${vw} × ${vh} px`;
-                el.metaDuration.textContent = `${duration.toFixed(1)}秒`;
-
-                // スライダーと数値入力を初期化
-                const maxStr = duration.toFixed(1);
-                el.trimStartSlider.min = '0';
-                el.trimStartSlider.max = maxStr;
-                el.trimEndSlider.min = '0.1';
-                el.trimEndSlider.max = maxStr;
-                el.trimStart.max = maxStr;
-                el.trimEnd.max = maxStr;
-                setTrimValues(0, duration);
-
-                el.inputCard.classList.add('hidden');
-                el.recordingCard.classList.add('hidden');
-                el.videoCard.classList.remove('hidden');
-                el.resultCard.classList.add('hidden');
-                el.btnConvert.disabled = false;
-                el.btnConvertLabel.textContent = 'GIFを作成する';
-
-                adjustVideoPreviewBoxHeight();
-                updateOutputMetaDisplay();
-                updateLoopPreviewAndWarnings();
-                showToast('動画を読み込みました');
-            } catch (err) {
-                showAlert('動画の読み込みに失敗しました', (err && err.message) || '別の動画ファイルでお試しください。');
-            }
-        }
-
-        function resetVideoState() {
-            stopRangePreview();
-            if (state.videoUrl) {
-                URL.revokeObjectURL(state.videoUrl);
-                state.videoUrl = null;
-            }
-            el.videoPreview.removeAttribute('src');
-            el.videoPreview.load();
-            el.fileInput.value = '';
-            state.videoDuration = 0;
-            state.videoWidth = 0;
-            state.videoHeight = 0;
-
-            el.videoCard.classList.add('hidden');
-            el.resultCard.classList.add('hidden');
-            el.inputCard.classList.remove('hidden');
-            el.btnConvert.disabled = true;
-            el.btnConvertLabel.textContent = 'GIFを作成する';
-            updateLoopPreviewAndWarnings();
-        }
-
-        el.btnResetVideo.addEventListener('click', resetVideoState);
-
-        el.fileInput.addEventListener('change', (e) => {
-            const file = e.target.files && e.target.files[0];
-            if (file) {
-                loadVideoFromBlob(file, file.name);
-            }
-        });
-
-        ['dragenter', 'dragover'].forEach((evt) => {
-            el.dropZone.addEventListener(evt, (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                el.dropZone.classList.add('drop-zone-active');
-            });
-        });
-
-        ['dragleave', 'drop'].forEach((evt) => {
-            el.dropZone.addEventListener(evt, (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                el.dropZone.classList.remove('drop-zone-active');
-            });
-        });
-
-        el.dropZone.addEventListener('drop', (e) => {
-            const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-            if (!file) return;
-            if (!file.type.startsWith('video/') && !/\.(mp4|mov|webm|m4v|ogv)$/i.test(file.name)) {
-                showAlert('非対応のファイル形式です', 'MP4・MOV・WebMなどの動画ファイルを選択してください。');
-                return;
-            }
-            loadVideoFromBlob(file, file.name);
-        });
-
-        // PC画面録画 (getDisplayMedia + MediaRecorder)
-        function formatTimer(sec) {
-            const m = Math.floor(sec / 60);
-            const s = Math.floor(sec % 60);
-            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-
-        function cleanupRecordStream() {
-            if (state.recordTimerId) {
-                clearInterval(state.recordTimerId);
-                state.recordTimerId = null;
-            }
-            if (state.recordStream) {
-                state.recordStream.getTracks().forEach((t) => {
-                    try { t.stop(); } catch (_) {}
-                });
-                state.recordStream = null;
-            }
-            el.liveRecordPreview.srcObject = null;
-        }
-
-        async function startScreenRecording() {
-            hideAlert();
-            if (!navigator.mediaDevices || typeof navigator.mediaDevices.getDisplayMedia !== 'function') {
-                showAlert(
-                    'このブラウザ・端末では画面録画を利用できません',
-                    'スマホのブラウザや一部環境ではOSの制限により画面録画APIが利用できません。\n端末標準の画面録画機能で撮影した動画を上の枠からアップロードしてください。'
-                );
-                return;
-            }
-
-            try {
-                const stream = await navigator.mediaDevices.getDisplayMedia({
-                    video: { frameRate: { ideal: 24, max: 30 } },
-                    audio: false
-                });
-
-                state.recordStream = stream;
-                state.recordedChunks = [];
-                state.recordStartTime = Date.now();
-                state.lastRecordDurationSec = 0;
-
-                // ブラウザ対応MIMEタイプを自動選択
-                const mimeCandidates = [
-                    'video/webm;codecs=vp9',
-                    'video/webm;codecs=vp8',
-                    'video/webm',
-                    'video/mp4'
-                ];
-                let selectedMime = '';
-                if (typeof MediaRecorder !== 'undefined' && typeof MediaRecorder.isTypeSupported === 'function') {
-                    selectedMime = mimeCandidates.find((m) => MediaRecorder.isTypeSupported(m)) || '';
-                }
-
-                const recorder = selectedMime
-                    ? new MediaRecorder(stream, { mimeType: selectedMime })
-                    : new MediaRecorder(stream);
-
-                state.mediaRecorder = recorder;
-
-                recorder.ondataavailable = (ev) => {
-                    if (ev.data && ev.data.size > 0) {
-                        state.recordedChunks.push(ev.data);
-                    }
-                };
-
-                recorder.onstop = () => {
-                    const elapsedSec = Math.max(0.5, (Date.now() - state.recordStartTime) / 1000);
-                    state.lastRecordDurationSec = elapsedSec;
-                    const chunks = state.recordedChunks.slice();
-                    cleanupRecordStream();
-                    el.recordingCard.classList.add('hidden');
-
-                    if (chunks.length === 0) {
-                        el.inputCard.classList.remove('hidden');
-                        showAlert('録画データが取得できませんでした', '録画時間が短すぎる可能性があります。もう一度お試しください。');
-                        return;
-                    }
-
-                    const mime = recorder.mimeType || selectedMime || 'video/webm';
-                    const blob = new Blob(chunks, { type: mime });
-                    const ext = mime.includes('mp4') ? 'mp4' : 'webm';
-                    loadVideoFromBlob(blob, `screen_record.${ext}`, elapsedSec);
-                };
-
-                // ブラウザの「共有を停止」バーを押した際も安全に終了
-                const videoTrack = stream.getVideoTracks()[0];
-                if (videoTrack) {
-                    videoTrack.onended = () => {
-                        if (state.mediaRecorder && state.mediaRecorder.state !== 'inactive') {
-                            try { state.mediaRecorder.stop(); } catch (_) {}
-                        }
-                    };
-                }
-
-                el.liveRecordPreview.srcObject = stream;
-                el.recordTimer.textContent = '00:00';
-                el.inputCard.classList.add('hidden');
-                el.videoCard.classList.add('hidden');
-                el.recordingCard.classList.remove('hidden');
-
-                recorder.start(250);
-                state.recordTimerId = setInterval(() => {
-                    const sec = (Date.now() - state.recordStartTime) / 1000;
-                    el.recordTimer.textContent = formatTimer(sec);
-                }, 250);
-
-            } catch (err) {
-                cleanupRecordStream();
-                el.recordingCard.classList.add('hidden');
-                if (!state.videoUrl) el.inputCard.classList.remove('hidden');
-
-                const name = (err && err.name) || '';
-                if (name === 'NotAllowedError') {
-                    showAlert(
-                        '画面録画が許可されませんでした',
-                        '録画がキャンセルされたか、プレビュー画面（iframe）のセキュリティ制限でブロックされました。\n・HTMLファイルを保存してブラウザで直接開くと録画できます。\n・または、録画済みの動画ファイルを上の枠から選んでください。'
-                    );
-                } else {
-                    showAlert(
-                        '画面録画を開始できませんでした',
-                        ((err && err.message) || 'お使いの環境では画面録画APIが制限されています。') +
-                        '\n録画済みの動画ファイルをアップロードしてGIF化してください。'
-                    );
-                }
-            }
-        }
-
-        el.btnStartRecord.addEventListener('click', startScreenRecording);
-        el.btnStopRecord.addEventListener('click', () => {
-            if (state.mediaRecorder && state.mediaRecorder.state !== 'inactive') {
-                try { state.mediaRecorder.stop(); } catch (_) {}
-            } else {
-                cleanupRecordStream();
-                el.recordingCard.classList.add('hidden');
-                el.inputCard.classList.remove('hidden');
-            }
-        });
-
-        // ============================================================
-        // 7. トリミング操作 & 選択区間ループ再生
-        // ============================================================
-        function setTrimValues(startSec, endSec) {
-            const dur = Math.max(0.1, state.videoDuration || 0.1);
-            let s = Math.max(0, Math.min(startSec, dur - 0.1));
-            let e = Math.max(s + 0.1, Math.min(endSec, dur));
-            if (dur <= 0.1) { s = 0; e = dur; }
-
-            el.trimStart.value = s.toFixed(1);
-            el.trimEnd.value = e.toFixed(1);
-            el.trimStartSlider.value = s.toFixed(1);
-            el.trimEndSlider.value = e.toFixed(1);
-            el.trimDurationLabel.textContent = `選択: ${(e - s).toFixed(1)}秒`;
-            updateLoopPreviewAndWarnings();
-        }
-
-        function handleTrimChange(source) {
-            const dur = Math.max(0.1, state.videoDuration || 0.1);
-            let s = parseFloat(source === 'slider' ? el.trimStartSlider.value : el.trimStart.value);
-            let e = parseFloat(source === 'slider' ? el.trimEndSlider.value : el.trimEnd.value);
-            if (!isFinite(s)) s = 0;
-            if (!isFinite(e)) e = dur;
-            if (s < 0) s = 0;
-            if (e > dur) e = dur;
-            if (e <= s + 0.1) {
-                if (s + 0.1 <= dur) e = s + 0.1;
-                else s = Math.max(0, e - 0.1);
-            }
-            setTrimValues(s, e);
-        }
-
-        el.trimStartSlider.addEventListener('input', () => {
-            handleTrimChange('slider');
-            if (state.videoUrl) el.videoPreview.currentTime = parseFloat(el.trimStart.value) || 0;
-        });
-        el.trimEndSlider.addEventListener('input', () => {
-            handleTrimChange('slider');
-            if (state.videoUrl) el.videoPreview.currentTime = parseFloat(el.trimEnd.value) || 0;
-        });
-        el.trimStart.addEventListener('change', () => handleTrimChange('input'));
-        el.trimEnd.addEventListener('change', () => handleTrimChange('input'));
-
-        el.btnSetStart.addEventListener('click', () => {
-            if (!state.videoUrl) return;
-            const cur = el.videoPreview.currentTime || 0;
-            const { end } = getTrimRange();
-            setTrimValues(cur, Math.max(cur + 0.1, end));
-        });
-
-        el.btnSetEnd.addEventListener('click', () => {
-            if (!state.videoUrl) return;
-            const cur = el.videoPreview.currentTime || 0;
-            const { start } = getTrimRange();
-            setTrimValues(Math.min(start, Math.max(0, cur - 0.1)), cur);
-        });
-
-        function stopRangePreview() {
-            state.isRangePlaying = false;
-            el.videoPreview.playbackRate = 1;
-            try { el.videoPreview.pause(); } catch (_) {}
-            el.btnPreviewRangeText.textContent = '選択区間をループ再生';
-        }
-
-        el.btnPreviewRange.addEventListener('click', () => {
-            if (!state.videoUrl) return;
-            if (state.isRangePlaying) {
-                stopRangePreview();
-                return;
-            }
-            const { start } = getTrimRange();
-            state.isRangePlaying = true;
-            el.videoPreview.currentTime = start;
-            el.videoPreview.playbackRate = state.selectedSpeed;
-            el.videoPreview.play().catch(() => {});
-            el.btnPreviewRangeText.textContent = 'ループ再生を停止';
-        });
-
-        el.videoPreview.addEventListener('timeupdate', () => {
-            if (!state.isRangePlaying) return;
-            const { start, end } = getTrimRange();
-            if (el.videoPreview.currentTime >= end - 0.04) {
-                el.videoPreview.currentTime = start;
-            }
-        });
-
-        el.videoPreview.addEventListener('pause', () => {
-            if (state.isRangePlaying && !el.videoPreview.ended) {
-                // ユーザーが手動停止した場合のみ解除
-                state.isRangePlaying = false;
-                el.videoPreview.playbackRate = 1;
-                el.btnPreviewRangeText.textContent = '選択区間をループ再生';
-            }
-        });
-
-        // ============================================================
-        // 8. プリセット選択（サイズ4択・FPS4択・静止統合トグル・画質仕上げ2択・再生速度4択）
-        // ============================================================
-        const activePresetCls = ['border-emerald-500', 'bg-emerald-500/5', 'dark:bg-emerald-500/10', 'ring-1', 'ring-emerald-500/30'];
-        const inactivePresetCls = ['border-warm-200', 'dark:border-matte-700', 'bg-warm-50/40', 'dark:bg-matte-800/40'];
-
-        function selectSizePreset(sizeVal) {
-            el.sizePresetBtns.forEach((b) => {
-                const isMatch = parseInt(b.dataset.size, 10) === sizeVal;
-                b.classList.toggle('active', isMatch);
-                if (isMatch) {
-                    b.classList.remove(...inactivePresetCls);
-                    b.classList.add(...activePresetCls);
-                    state.selectedSize = sizeVal;
-                    state.selectedSizeLabel = b.dataset.label;
-                } else {
-                    b.classList.remove(...activePresetCls);
-                    b.classList.add(...inactivePresetCls);
-                }
-            });
-            updateOutputMetaDisplay();
-            updateLoopPreviewAndWarnings();
-        }
-
+// ... existing code ... -->
         function selectFinishPreset(finishVal) {
             el.finishPresetBtns.forEach((b) => {
                 const isMatch = b.dataset.finish === finishVal;
@@ -1959,649 +1440,97 @@
                     b.classList.add(...inactivePresetCls);
                 }
             });
+            if (finishVal === 'auto') {
+                el.autoFinishBadge.textContent = '変換時に実写／画面録画を自動判定';
+            } else if (finishVal === 'smooth') {
+                el.autoFinishBadge.textContent = 'Sierra-2-4A 誤差拡散（実写向け）';
+            } else {
+                el.autoFinishBadge.textContent = 'ディザOFF（画面録画・文字向け）';
+            }
         }
 
         function selectFpsPreset(fpsVal) {
-            el.fpsPresetBtns.forEach((b) => {
-                const isMatch = parseInt(b.dataset.fps, 10) === fpsVal;
-                b.classList.toggle('active', isMatch);
-                if (isMatch) {
-                    b.classList.remove(...inactivePresetCls);
-                    b.classList.add(...activePresetCls);
-                    state.selectedFps = fpsVal;
-                } else {
-                    b.classList.remove(...activePresetCls);
-                    b.classList.add(...inactivePresetCls);
-                }
-            });
-            updateLoopPreviewAndWarnings();
-        }
-
-        function selectSpeedPreset(speedVal) {
-            el.speedPresetBtns.forEach((b) => {
-                const isMatch = parseFloat(b.dataset.speed) === speedVal;
-                b.classList.toggle('active', isMatch);
-                if (isMatch) {
-                    b.classList.remove(...inactivePresetCls);
-                    b.classList.add(...activePresetCls);
-                    state.selectedSpeed = speedVal;
-                    state.selectedSpeedLabel = b.dataset.speedLabel;
-                } else {
-                    b.classList.remove(...activePresetCls);
-                    b.classList.add(...inactivePresetCls);
-                }
-            });
-            el.loopSpeedChip.textContent = state.selectedSpeedLabel;
-            if (state.isRangePlaying) {
-                el.videoPreview.playbackRate = state.selectedSpeed;
-            }
-            updateLoopPreviewAndWarnings();
-        }
-
-        el.sizePresetBtns.forEach((btn) => {
-            btn.addEventListener('click', () => selectSizePreset(parseInt(btn.dataset.size, 10)));
-        });
-        el.finishPresetBtns.forEach((btn) => {
-            btn.addEventListener('click', () => selectFinishPreset(btn.dataset.finish));
-        });
-        el.fpsPresetBtns.forEach((btn) => {
-            btn.addEventListener('click', () => selectFpsPreset(parseInt(btn.dataset.fps, 10)));
-        });
-        el.speedPresetBtns.forEach((btn) => {
-            btn.addEventListener('click', () => selectSpeedPreset(parseFloat(btn.dataset.speed)));
-        });
-
-        // 静止フレーム自動統合トグル
-        el.toggleDedup.addEventListener('click', () => {
-            state.enableDedup = !state.enableDedup;
-            el.toggleDedup.setAttribute('aria-checked', String(state.enableDedup));
-            if (state.enableDedup) {
-                el.toggleDedup.classList.remove('bg-stone-300', 'dark:bg-matte-700');
-                el.toggleDedup.classList.add('bg-emerald-500');
-                el.toggleDedupKnob.classList.remove('translate-x-0');
-                el.toggleDedupKnob.classList.add('translate-x-5');
-            } else {
-                el.toggleDedup.classList.remove('bg-emerald-500');
-                el.toggleDedup.classList.add('bg-stone-300', 'dark:bg-matte-700');
-                el.toggleDedupKnob.classList.remove('translate-x-5');
-                el.toggleDedupKnob.classList.add('translate-x-0');
-            }
-            updateLoopPreviewAndWarnings();
-        });
-
+// ... existing code ... -->
         function calcOutputDimensions() {
             if (!state.videoWidth || !state.videoHeight) return { width: 0, height: 0 };
-            const maxDim = state.selectedSize;
+            const targetShort = state.selectedSize;
             const origW = state.videoWidth;
             const origH = state.videoHeight;
-            const longest = Math.max(origW, origH);
-            const scale = longest > maxDim ? (maxDim / longest) : 1;
-            const width = Math.max(2, Math.round(origW * scale));
-            const height = Math.max(2, Math.round(origH * scale));
+            const shortest = Math.min(origW, origH);
+            // 短辺基準で縮小（元動画より拡大しない）
+            const scale = shortest > targetShort ? (targetShort / shortest) : 1;
+            // 2の倍数に丸めつつ元サイズを超えないようクランプ
+            let width = Math.max(2, Math.floor((origW * scale) / 2) * 2);
+            let height = Math.max(2, Math.floor((origH * scale) / 2) * 2);
+            if (width > origW) width = origW;
+            if (height > origH) height = origH;
             return { width, height };
         }
 
         function updateOutputMetaDisplay() {
-            if (!state.videoWidth || !state.videoHeight) return;
-            const { width, height } = calcOutputDimensions();
-            el.metaOutput.textContent = `${width} × ${height} px`;
-        }
-
-        function detectVideoOrientation(w, h) {
-            const ratio = w / Math.max(1, h);
-            if (ratio < 0.85) {
-                const tag = Math.abs(ratio - 9 / 16) < 0.08 ? '9:16' : (Math.abs(ratio - 9 / 19.5) < 0.08 ? '9:19.5' : '縦長');
-                return { orientation: 'portrait', label: `縦長スマホ録画 (${tag})` };
-            }
-            if (ratio > 1.18) {
-                const tag = Math.abs(ratio - 16 / 9) < 0.08 ? '16:9' : (Math.abs(ratio - 16 / 10) < 0.08 ? '16:10' : (Math.abs(ratio - 4 / 3) < 0.08 ? '4:3' : '横長'));
-                return { orientation: 'landscape', label: `横長PC画面 (${tag})` };
-            }
-            return { orientation: 'square', label: '正方形 (1:1)' };
-        }
-
-        // ============================================================
-        // 9. 1ループ秒数計算 & 途切れ自動検知・ワンクリック改善提案
-        // ============================================================
-        function getTrimRange() {
-            const dur = Math.max(0.1, state.videoDuration || 0.1);
-            let start = parseFloat(el.trimStart.value);
-            let end = parseFloat(el.trimEnd.value);
-            if (!isFinite(start) || start < 0) start = 0;
-            if (!isFinite(end) || end <= 0) end = dur;
-            start = Math.max(0, Math.min(start, dur));
-            end = Math.max(0, Math.min(end, dur));
-            return { start, end };
-        }
-
-        function updateLoopPreviewAndWarnings() {
-            el.loopSpeedChip.textContent = state.selectedSpeedLabel;
-
-            if (!state.videoUrl || state.videoDuration <= 0) {
-                el.loopSecondsValue.textContent = '--.-';
-                el.estSizeBadge.textContent = '容量目安: --';
-                el.estSizeBadge.className = 'inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold bg-warm-200/70 dark:bg-matte-700 text-stone-600 dark:text-stone-300';
-                el.loopFormulaHint.textContent = '動画を選ぶと自動計算されます';
-                el.metricSourceDuration.textContent = '-- 秒';
-                el.metricFrames.textContent = `-- / ${MAX_FRAMES}`;
-                el.metricResolution.textContent = '-- × --';
-                el.metricEstSize.textContent = '--';
-                el.statusOkBadge.classList.add('hidden');
-                el.truncationWarningPanel.classList.add('hidden');
-                return;
-            }
-
-            const { start, end } = getTrimRange();
-            const trimDuration = Math.max(0.1, end - start);
-            const speed = state.selectedSpeed;
-            const fps = state.selectedFps;
-            const { width, height } = calcOutputDimensions();
-
-            const loopDuration = trimDuration / speed;
-            const rawFrames = Math.max(1, Math.floor(loopDuration * fps));
-            const willExceedFrames = rawFrames > MAX_FRAMES;
-            const actualFrames = Math.min(rawFrames, MAX_FRAMES);
-            const actualLoopDuration = willExceedFrames ? (MAX_FRAMES / fps) : loopDuration;
-            const isTrimmed = start > 0.05 || (state.videoDuration - end) > 0.2;
-
-            // 推定ファイルサイズ目安（静止統合ON時は画面録画平均で約30%軽量想定）
-            const dedupFactor = state.enableDedup ? 0.72 : 1.0;
-            const estBytes = Math.round(actualFrames * width * height * 0.13 * dedupFactor);
-            let sizeCategory = '軽量';
-            let sizeBadgeCls = 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
-            if (estBytes >= 6 * 1024 * 1024) {
-                sizeCategory = '重め';
-                sizeBadgeCls = 'bg-orange-500/15 text-orange-700 dark:text-orange-300';
-            } else if (estBytes >= 2 * 1024 * 1024) {
-                sizeCategory = '標準';
-                sizeBadgeCls = 'bg-amber-500/15 text-amber-700 dark:text-amber-300';
-            }
-
-            el.loopSecondsValue.textContent = actualLoopDuration.toFixed(1);
-            el.loopFormulaHint.textContent = `${trimDuration.toFixed(1)}秒 ÷ ${speed.toFixed(1)}x`;
-            el.estSizeBadge.textContent = `容量目安: ${sizeCategory}`;
-            el.estSizeBadge.className = `inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold ${sizeBadgeCls}`;
-
-            el.metricSourceDuration.textContent = `${state.videoDuration.toFixed(1)} 秒`;
-            el.metricFrames.textContent = `${rawFrames} / ${MAX_FRAMES}`;
-            el.metricFrames.className = willExceedFrames
-                ? 'text-xs sm:text-sm font-extrabold font-mono text-red-600 dark:text-red-400 mt-0.5'
-                : 'text-xs sm:text-sm font-extrabold font-mono text-stone-800 dark:text-stone-100 mt-0.5';
-            el.metricResolution.textContent = `${width}×${height}`;
-            el.metricEstSize.textContent = `${sizeCategory} (~${formatBytes(estBytes)})`;
-
-            // 途切れ警告とワンクリック改善策
-            const warnings = [];
-            const fixes = [];
-
-            if (willExceedFrames) {
-                const cutoffSourceSec = (MAX_FRAMES / fps) * speed;
-                const cutoffTimestamp = Math.min(state.videoDuration, start + cutoffSourceSec);
-                warnings.push(
-                    `フレーム数（${rawFrames}）が上限（${MAX_FRAMES}）を超えるため、約 ${cutoffSourceSec.toFixed(1)} 秒地点（元動画の ${cutoffTimestamp.toFixed(1)} 秒付近）で後半が途切れます。`
-                );
-
-                const neededSpeed = (trimDuration * fps) / MAX_FRAMES;
-                const fittingSpeed = SPEED_PRESETS.find((s) => s >= neededSpeed && s > speed);
-                if (fittingSpeed) {
+// ... existing code ... -->
+                if (state.selectedSize >= 640) {
                     fixes.push({
-                        label: `⚡ 再生速度を ${fittingSpeed.toFixed(1)}x にして全編を収める`,
+                        label: '📦 サイズを『軽量 (短辺320px)』にする',
                         action: () => {
-                            selectSpeedPreset(fittingSpeed);
-                            showToast(`再生速度を ${fittingSpeed.toFixed(1)}x に変更しました`);
-                        }
-                    });
-                } else if (speed < 3) {
-                    fixes.push({
-                        label: '⚡ 再生速度を 3.0x（早送り）にする',
-                        action: () => {
-                            selectSpeedPreset(3);
-                            showToast('再生速度を 3.0x に変更しました');
-                        }
-                    });
-                }
-
-                if (fps > 8) {
-                    const fits8 = Math.floor((trimDuration / speed) * 8) <= MAX_FRAMES;
-                    fixes.push({
-                        label: fits8 ? '🎞️ FPSを『軽量 (8fps)』に下げて収める' : '🎞️ FPSを『軽量 (8fps)』に下げる',
-                        action: () => {
-                            selectFpsPreset(8);
-                            showToast('フレームレートを 8fps に変更しました');
-                        }
-                    });
-                }
-
-                if (fps > 5) {
-                    const fits5 = Math.floor((trimDuration / speed) * 5) <= MAX_FRAMES;
-                    fixes.push({
-                        label: fits5 ? '🎞️ FPSを『超長時間 (5fps)』に下げて収める' : '🎞️ FPSを『超長時間 (5fps)』に下げる',
-                        action: () => {
-                            selectFpsPreset(5);
-                            showToast('フレームレートを 5fps（超長時間）に変更しました');
-                        }
-                    });
-
-                    if (!fits5 && !fittingSpeed) {
-                        const comboSpeed = SPEED_PRESETS.find((s) => Math.floor((trimDuration / s) * 5) <= MAX_FRAMES);
-                        if (comboSpeed) {
-                            fixes.push({
-                                label: `✨ 5fps ＋ ${comboSpeed.toFixed(1)}x で全編を収める`,
-                                action: () => {
-                                    selectFpsPreset(5);
-                                    selectSpeedPreset(comboSpeed);
-                                    showToast(`5fps・${comboSpeed.toFixed(1)}x に最適化しました`);
-                                }
-                            });
-                        }
-                    }
-                }
-
-                if (state.selectedSize >= 720) {
-                    fixes.push({
-                        label: '📦 サイズを『軽量 (360px)』にする',
-                        action: () => {
-                            selectSizePreset(360);
-                            showToast('画像サイズを「軽量」に変更しました');
+                            selectSizePreset(320);
+                            showToast('画像サイズを「軽量（短辺320px）」に変更しました');
                         }
                     });
                 }
             }
-
-            if (isTrimmed) {
-                warnings.push(
-                    `元動画（全体 ${state.videoDuration.toFixed(1)} 秒）のうち ${start.toFixed(1)}〜${end.toFixed(1)} 秒のみが選択されているため、前後の内容が途切れます。`
-                );
-                fixes.push({
-                    label: '↔️ トリミングを元動画の全編に広げる',
-                    action: () => {
-                        setTrimValues(0, state.videoDuration);
-                        showToast('トリミングを元動画の全編に広げました');
-                    }
-                });
-            }
-
-            if (warnings.length > 0) {
-                el.statusOkBadge.classList.add('hidden');
-                el.truncationWarningPanel.classList.remove('hidden');
-                el.truncationWarningTitle.textContent = willExceedFrames
-                    ? 'このまま生成すると元動画の後半が途切れてしまいます'
-                    : '選択範囲が元動画の一部のみになっています';
-
-                el.truncationWarningList.innerHTML = '';
-                warnings.forEach((msg) => {
-                    const li = document.createElement('li');
-                    li.textContent = msg;
-                    el.truncationWarningList.appendChild(li);
-                });
-
-                el.quickFixButtons.innerHTML = '';
-                fixes.forEach((fix) => {
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = 'px-3 py-2 rounded-xl bg-white dark:bg-matte-900 hover:bg-amber-100 dark:hover:bg-matte-800 border border-amber-300 dark:border-amber-500/50 text-amber-900 dark:text-amber-200 text-xs font-bold shadow-sm transition-all active:scale-[0.98]';
-                    btn.textContent = fix.label;
-                    btn.addEventListener('click', fix.action);
-                    el.quickFixButtons.appendChild(btn);
-                });
-            } else {
-                el.truncationWarningPanel.classList.add('hidden');
-                el.statusOkBadge.classList.remove('hidden');
-                el.statusOkText.textContent = `元動画の全編が途切れずに1ループ（約 ${loopDuration.toFixed(1)} 秒）で収まります`;
-            }
-        }
-
-        // ============================================================
-        // 10. 変換履歴（IndexedDB + メモリフォールバック）& モーダル
-        // ============================================================
-        function updateHistoryBadge() {
-            const count = state.historyItems.length;
-            el.historyBadge.textContent = String(count);
-            el.btnClearHistory.classList.toggle('hidden', count === 0);
-        }
-
-        function getHistoryObjectUrl(item) {
-            if (!state.historyObjectUrls.has(item.id)) {
-                state.historyObjectUrls.set(item.id, URL.createObjectURL(item.blob));
-            }
-            return state.historyObjectUrls.get(item.id);
-        }
-
-        function revokeHistoryObjectUrl(id) {
-            if (state.historyObjectUrls.has(id)) {
-                URL.revokeObjectURL(state.historyObjectUrls.get(id));
-                state.historyObjectUrls.delete(id);
-            }
-        }
-
-        function initDB() {
-            try {
-                if (typeof indexedDB === 'undefined') {
-                    throw new Error('IndexedDB unavailable');
-                }
-                const req = indexedDB.open(DB_NAME, 1);
-                req.onupgradeneeded = (e) => {
-                    const db = e.target.result;
-                    if (!db.objectStoreNames.contains(DB_STORE)) {
-                        db.createObjectStore(DB_STORE, { keyPath: 'id' });
-                    }
-                };
-                req.onsuccess = (e) => {
-                    state.db = e.target.result;
-                    loadHistoryFromDB();
-                };
-                req.onerror = () => {
-                    enableMemoryFallback();
-                };
-            } catch (_) {
-                enableMemoryFallback();
-            }
-        }
-
-        function enableMemoryFallback() {
-            state.useMemoryFallback = true;
-            el.historyStorageNote.textContent = 'このセッション中のみメモリに保存されます（ブラウザ制限のため）';
-            updateHistoryBadge();
-        }
-
-        function loadHistoryFromDB() {
-            if (!state.db) return;
-            try {
-                const tx = state.db.transaction(DB_STORE, 'readonly');
-                const store = tx.objectStore(DB_STORE);
-                const req = store.getAll();
-                req.onsuccess = () => {
-                    const items = req.result || [];
-                    items.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-                    state.historyItems = items;
-                    updateHistoryBadge();
-                    if (state.activeTab === 'history') renderHistoryList();
-                };
-                req.onerror = () => enableMemoryFallback();
-            } catch (_) {
-                enableMemoryFallback();
-            }
-        }
-
-        async function saveHistoryItem(item) {
-            state.historyItems.unshift(item);
-            updateHistoryBadge();
-            if (state.activeTab === 'history') renderHistoryList();
-
-            if (state.useMemoryFallback || !state.db) return;
-            try {
-                await new Promise((resolve) => {
-                    const tx = state.db.transaction(DB_STORE, 'readwrite');
-                    tx.objectStore(DB_STORE).put(item);
-                    tx.oncomplete = () => resolve();
-                    tx.onerror = () => resolve();
-                });
-            } catch (_) {
-                // 保存容量上限等で失敗してもメモリ上では維持
-            }
-        }
-
-        async function deleteHistoryItem(id) {
-            revokeHistoryObjectUrl(id);
-            state.historyItems = state.historyItems.filter((it) => it.id !== id);
-            updateHistoryBadge();
-            renderHistoryList();
-
-            if (!state.useMemoryFallback && state.db) {
-                try {
-                    await new Promise((resolve) => {
-                        const tx = state.db.transaction(DB_STORE, 'readwrite');
-                        tx.objectStore(DB_STORE).delete(id);
-                        tx.oncomplete = () => resolve();
-                        tx.onerror = () => resolve();
-                    });
-                } catch (_) {}
-            }
-            showToast('履歴を削除しました');
-        }
-
-        async function clearAllHistory() {
-            state.historyItems.forEach((it) => revokeHistoryObjectUrl(it.id));
-            state.historyItems = [];
-            updateHistoryBadge();
-            renderHistoryList();
-
-            if (!state.useMemoryFallback && state.db) {
-                try {
-                    await new Promise((resolve) => {
-                        const tx = state.db.transaction(DB_STORE, 'readwrite');
-                        tx.objectStore(DB_STORE).clear();
-                        tx.oncomplete = () => resolve();
-                        tx.onerror = () => resolve();
-                    });
-                } catch (_) {}
-            }
-            showToast('すべての履歴を削除しました');
-        }
-
-        function renderHistoryList() {
-            const items = state.historyItems;
-            el.historyEmpty.classList.toggle('hidden', items.length > 0);
-            el.historyList.innerHTML = '';
-
-            items.forEach((item) => {
-                const url = getHistoryObjectUrl(item);
-                const card = document.createElement('div');
-                card.className = 'bg-white dark:bg-matte-900 rounded-2xl border border-warm-200 dark:border-matte-700 overflow-hidden shadow-sm flex flex-col';
-
-                const thumbWrap = document.createElement('button');
-                thumbWrap.type = 'button';
-                thumbWrap.className = 'w-full h-44 bg-warm-100 dark:bg-matte-950 flex items-center justify-center p-2 cursor-pointer group relative overflow-hidden';
-                thumbWrap.addEventListener('click', () => openPreviewModal(item));
-
-                const img = document.createElement('img');
-                img.src = url;
-                img.alt = item.fileName;
-                img.className = 'max-w-full max-h-full object-contain rounded-lg transition-transform duration-200 group-hover:scale-[1.03]';
-                thumbWrap.appendChild(img);
-
-                const body = document.createElement('div');
-                body.className = 'p-4 flex-1 flex flex-col justify-between gap-3';
-
-                const mergedBadge = item.mergedFrames > 0
-                    ? ` • 静止統合${item.mergedFrames}枚`
-                    : '';
-
-                const info = document.createElement('div');
-                info.innerHTML = `
-                    <div class="flex items-center justify-between gap-2">
-                        <p class="text-sm font-bold text-stone-900 dark:text-white truncate">${item.fileName}</p>
-                        <span class="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 shrink-0">${formatBytes(item.fileSize)}</span>
-                    </div>
-                    <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">
-                        1ループ約${(item.loopDuration || 0).toFixed(1)}秒 • ${item.width}×${item.height} • ${item.fps}fps${mergedBadge}
-                    </p>
-                    <p class="text-[10px] text-stone-400 dark:text-stone-500 mt-0.5">${formatDateTime(item.createdAt)}</p>
-                `;
-
-                const actions = document.createElement('div');
-                actions.className = 'flex items-center gap-2 pt-1';
-
-                const btnDl = document.createElement('button');
-                btnDl.type = 'button';
-                btnDl.className = 'flex-1 py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors';
-                btnDl.textContent = 'ダウンロード';
-                btnDl.addEventListener('click', () => {
-                    triggerDownload(url, item.fileName);
-                    showToast('ダウンロードを開始しました');
-                });
-
-                const btnZoom = document.createElement('button');
-                btnZoom.type = 'button';
-                btnZoom.className = 'py-2 px-3 rounded-xl bg-warm-100 hover:bg-warm-200 dark:bg-matte-800 dark:hover:bg-matte-700 text-stone-700 dark:text-stone-200 text-xs font-bold transition-colors';
-                btnZoom.textContent = '拡大';
-                btnZoom.addEventListener('click', () => openPreviewModal(item));
-
-                const btnDel = document.createElement('button');
-                btnDel.type = 'button';
-                btnDel.className = 'py-2 px-3 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 text-xs font-bold transition-colors';
-                btnDel.textContent = '削除';
-                btnDel.addEventListener('click', () => deleteHistoryItem(item.id));
-
-                actions.append(btnDl, btnZoom, btnDel);
-                body.append(info, actions);
-                card.append(thumbWrap, body);
-                el.historyList.appendChild(card);
-            });
-        }
-
-        function openPreviewModal(item) {
-            state.modalItem = item;
-            const url = getHistoryObjectUrl(item);
-            el.modalTitle.textContent = item.fileName;
-            el.modalMeta.textContent = `1ループ約${(item.loopDuration || 0).toFixed(1)}秒 • ${item.width}×${item.height} • ${item.fps}fps • ${formatBytes(item.fileSize)}`;
-            el.modalImg.src = url;
-            el.previewModal.classList.remove('hidden');
-        }
-
-        function closePreviewModal() {
-            el.previewModal.classList.add('hidden');
-            state.modalItem = null;
-        }
-
-        el.btnCloseModal.addEventListener('click', closePreviewModal);
-        el.previewModal.addEventListener('click', (e) => {
-            if (e.target === el.previewModal) closePreviewModal();
-        });
-        el.btnModalDownload.addEventListener('click', () => {
-            if (!state.modalItem) return;
-            triggerDownload(getHistoryObjectUrl(state.modalItem), state.modalItem.fileName);
-            showToast('ダウンロードを開始しました');
-        });
-
-        el.btnClearHistory.addEventListener('click', () => {
-            el.confirmModal.classList.remove('hidden');
-        });
-        el.btnConfirmCancel.addEventListener('click', () => {
-            el.confirmModal.classList.add('hidden');
-        });
-        el.confirmModal.addEventListener('click', (e) => {
-            if (e.target === el.confirmModal) el.confirmModal.classList.add('hidden');
-        });
-        el.btnConfirmOk.addEventListener('click', () => {
-            el.confirmModal.classList.add('hidden');
-            clearAllHistory();
-        });
-
-        // ============================================================
-        // 11. GIF変換処理（ステップダウン縮小 + 静止フレーム自動統合 + ストリーミング圧縮）
-        // ============================================================
-        function drawHighQualityFrame(video, targetCtx, targetW, targetH, stepBuffers) {
-            const srcW = video.videoWidth || targetW;
-            const srcH = video.videoHeight || targetH;
-
-            targetCtx.imageSmoothingEnabled = true;
-            targetCtx.imageSmoothingQuality = 'high';
-
-            if (srcW <= targetW * 2 && srcH <= targetH * 2) {
-                targetCtx.drawImage(video, 0, 0, targetW, targetH);
-                return;
-            }
-
-            let curW = srcW;
-            let curH = srcH;
-            let source = video;
-            let bufIdx = 0;
-
-            while (curW * 0.5 > targetW || curH * 0.5 > targetH) {
-                const nextW = Math.max(targetW, Math.round(curW * 0.5));
-                const nextH = Math.max(targetH, Math.round(curH * 0.5));
-
-                let buf = stepBuffers[bufIdx];
-                if (!buf) {
-                    const c = document.createElement('canvas');
-                    buf = { canvas: c, ctx: c.getContext('2d') };
-                    stepBuffers[bufIdx] = buf;
-                }
-                if (buf.canvas.width !== nextW || buf.canvas.height !== nextH) {
-                    buf.canvas.width = nextW;
-                    buf.canvas.height = nextH;
-                }
-                buf.ctx.imageSmoothingEnabled = true;
-                buf.ctx.imageSmoothingQuality = 'high';
-                buf.ctx.drawImage(source, 0, 0, nextW, nextH);
-
-                source = buf.canvas;
-                curW = nextW;
-                curH = nextH;
-                bufIdx++;
-            }
-
-            targetCtx.drawImage(source, 0, 0, targetW, targetH);
-        }
-
+// ... existing code ... -->
         // 高速サンプリング差分比較による静止フレーム判定
         function isFrameNearlyIdentical(prevRgba, currRgba, width, height) {
-            const totalPixels = width * height;
-            if (totalPixels === 0) return true;
-            // 最大約3200点を均等にサンプリングして高速判定
-            const stride = Math.max(1, Math.floor(totalPixels / 3200));
-            let sampled = 0;
-            let sumDiff = 0;
-            let changedPixels = 0;
-
-            for (let idx = 0; idx < totalPixels; idx += stride) {
-                const p = idx << 2;
-                const d = Math.abs(prevRgba[p] - currRgba[p])
-                        + Math.abs(prevRgba[p + 1] - currRgba[p + 1])
-                        + Math.abs(prevRgba[p + 2] - currRgba[p + 2]);
-                sumDiff += d;
-                if (d > 24) changedPixels++;
-                sampled++;
-            }
-
+// ... existing code ... -->
             const avgChannelDiff = sumDiff / (sampled * 3);
             const changedRatio = changedPixels / sampled;
             return avgChannelDiff < 1.6 && changedRatio < 0.003;
         }
 
-        function finishConversionUI() {
-            state.isConverting = false;
-            el.btnConvert.disabled = !state.videoUrl;
-            el.btnConvertLabel.textContent = 'GIFを作成する';
-            el.progressContainer.classList.add('hidden');
-            el.progressDedupInfo.textContent = '';
-        }
+        // 先頭フレームの色数・グラデーション分布から実写(smooth)／UI画面録画(crisp)を自動判定
+        function detectFinishModeFromRgba(rgba, width, height) {
+            const totalPixels = width * height;
+            if (totalPixels === 0) return 'smooth';
 
-        el.btnCancelConvert.addEventListener('click', () => {
-            if (!state.isConverting) return;
-            state.cancelRequested = true;
-            finishConversionUI();
-            showToast('変換をキャンセルしました');
-        });
+            const colorSet = new Set();
+            const stride = Math.max(1, Math.floor(totalPixels / 8192));
+            let sampled = 0;
+            let exactFlatPairs = 0;
+            let gentleGradPairs = 0;
 
-        el.btnConvert.addEventListener('click', async () => {
-            if (!state.videoUrl || state.isConverting) return;
-            hideAlert();
-            stopRangePreview();
+            for (let idx = 0; idx < totalPixels; idx += stride) {
+                const p = idx << 2;
+                const r = rgba[p];
+                const g = rgba[p + 1];
+                const b = rgba[p + 2];
+                // 6-bit量子化キーで色バリエーションを測定
+                colorSet.add(((r >> 2) << 12) | ((g >> 2) << 6) | (b >> 2));
 
-            const { start: startSec, end: endSec } = getTrimRange();
-            if (endSec <= startSec) {
-                showAlert('切り抜き範囲が正しくありません', '終了位置は開始位置より大きい秒数を指定してください。');
-                return;
+                if ((idx % width) < width - 1) {
+                    const np = p + 4;
+                    const diff = Math.abs(r - rgba[np]) + Math.abs(g - rgba[np + 1]) + Math.abs(b - rgba[np + 2]);
+                    if (diff === 0) exactFlatPairs++;
+                    else if (diff >= 1 && diff <= 28) gentleGradPairs++;
+                }
+                sampled++;
             }
 
-            state.isConverting = true;
-            state.cancelRequested = false;
-            el.btnConvert.disabled = true;
-            el.btnConvertLabel.textContent = '変換中...';
-            el.resultCard.classList.add('hidden');
-            el.progressContainer.classList.remove('hidden');
-            el.progressBar.style.width = '0%';
-            el.progressPercent.textContent = '0%';
-            el.progressStatus.textContent = '動画を準備中...';
-            el.progressDedupInfo.textContent = '';
+            const flatRatio = exactFlatPairs / Math.max(1, sampled);
+            const gradRatio = gentleGradPairs / Math.max(1, sampled);
+            // 完全フラット領域が多く、色数が少ない場合はUI画面録画と判定
+            if (flatRatio > 0.58 && (colorSet.size < 320 || gradRatio < 0.16)) {
+                return 'crisp';
+            }
+            return 'smooth';
+        }
 
-            let offVideo = null;
+        function finishConversionUI() {
+// ... existing code ... -->
             try {
                 const fps = state.selectedFps;
                 const speed = state.selectedSpeed;
-                const finishMode = state.selectedFinish;
+                const selectedFinish = state.selectedFinish;
                 const useDedup = state.enableDedup;
                 const frameDelayCs = Math.max(2, Math.round(100 / fps));
                 const { width: gifWidth, height: gifHeight } = calcOutputDimensions();
@@ -2626,86 +1555,50 @@
                 const ctx = canvas.getContext('2d', { willReadFrequently: true });
                 const stepBuffers = [];
 
-                const encoder = new PureGifEncoder(gifWidth, gifHeight, finishMode);
-
                 const trimDuration = endSec - startSec;
                 const loopDuration = trimDuration / speed;
                 const totalSamples = Math.min(MAX_FRAMES, Math.max(1, Math.floor(loopDuration * fps)));
+
+                // 画質仕上げ「自動」の場合は先頭付近フレームを解析して決定
+                let resolvedFinish = selectedFinish;
+                let autoDetectedLabel = '';
+                if (selectedFinish === 'auto') {
+                    el.progressStatus.textContent = '映像タイプを自動解析中...';
+                    await seekTo(offVideo, Math.min(startSec + Math.min(0.3, trimDuration * 0.2), endSec, state.videoDuration));
+                    drawHighQualityFrame(offVideo, ctx, gifWidth, gifHeight, stepBuffers);
+                    const probeRgba = ctx.getImageData(0, 0, gifWidth, gifHeight).data;
+                    resolvedFinish = detectFinishModeFromRgba(probeRgba, gifWidth, gifHeight);
+                    autoDetectedLabel = resolvedFinish === 'smooth'
+                        ? '自動判定: 実写向け（なめらか）'
+                        : '自動判定: 画面録画向け（くっきり）';
+                    el.autoFinishBadge.textContent = autoDetectedLabel;
+                    el.progressDedupInfo.textContent = autoDetectedLabel;
+                    await yieldToUI();
+                }
+
+                const encoder = new PureGifEncoder(gifWidth, gifHeight, resolvedFinish);
 
                 let pendingRgba = null;
                 let pendingDelayCs = 0;
                 let mergedFrames = 0;
                 let totalOutputDelayCs = 0;
-
-                for (let i = 0; i < totalSamples; i++) {
-                    if (state.cancelRequested) return;
-
-                    el.progressStatus.textContent = `解析・圧縮中 (${i + 1} / ${totalSamples} フレーム)...`;
-                    const targetTime = Math.min(startSec + (i / fps) * speed, endSec, state.videoDuration);
-                    await seekTo(offVideo, targetTime);
-
-                    if (state.cancelRequested) return;
-
-                    drawHighQualityFrame(offVideo, ctx, gifWidth, gifHeight, stepBuffers);
-                    const currentRgba = new Uint8ClampedArray(ctx.getImageData(0, 0, gifWidth, gifHeight).data);
-
-                    if (pendingRgba === null) {
-                        pendingRgba = currentRgba;
-                        pendingDelayCs = frameDelayCs;
-                    } else if (
-                        useDedup &&
-                        (pendingDelayCs + frameDelayCs) <= 60000 &&
-                        isFrameNearlyIdentical(pendingRgba, currentRgba, gifWidth, gifHeight)
-                    ) {
-                        // 静止フレームを直前フレームのdelayに統合（書き出しスキップ）
-                        pendingDelayCs += frameDelayCs;
-                        mergedFrames++;
-                    } else {
-                        // 動きがあったため保留フレームを即座に圧縮・書き出しして解放
-                        encoder.addFrame(pendingRgba, pendingDelayCs);
-                        totalOutputDelayCs += pendingDelayCs;
-                        pendingRgba = currentRgba;
-                        pendingDelayCs = frameDelayCs;
-                    }
-
+// ... existing code ... -->
                     const pct = Math.round(((i + 1) / totalSamples) * 98);
                     el.progressPercent.textContent = `${pct}%`;
                     el.progressBar.style.width = `${pct}%`;
                     if (useDedup && mergedFrames > 0) {
-                        el.progressDedupInfo.textContent = `静止フレーム ${mergedFrames} 枚を統合中`;
+                        el.progressDedupInfo.textContent = autoDetectedLabel
+                            ? `${autoDetectedLabel} ／ 静止統合 ${mergedFrames} 枚`
+                            : `静止フレーム ${mergedFrames} 枚を統合中`;
                     }
 
                     // メインスレッドを解放しフリーズ防止＆キャンセル即応答
                     await yieldToUI();
                 }
-
-                if (state.cancelRequested) return;
-
-                // 最後の保留フレームを書き出し
-                if (pendingRgba !== null) {
-                    encoder.addFrame(pendingRgba, pendingDelayCs);
-                    totalOutputDelayCs += pendingDelayCs;
-                    pendingRgba = null;
-                }
-
-                el.progressStatus.textContent = 'GIFファイルを生成中...';
-                el.progressPercent.textContent = '99%';
-                el.progressBar.style.width = '99%';
-                await yieldToUI();
-
-                const createdAt = Date.now();
-                const blob = encoder.finish();
-                const actualLoopDuration = totalOutputDelayCs / 100;
-
-                if (state.currentResultUrl) URL.revokeObjectURL(state.currentResultUrl);
-                const gifUrl = URL.createObjectURL(blob);
-                const outFileName = buildGifFileName(createdAt);
-
-                state.currentResultUrl = gifUrl;
-                state.currentResultName = outFileName;
-
+// ... existing code ... -->
                 el.gifResultImg.src = gifUrl;
-                el.resultMeta.textContent = `1ループ約${actualLoopDuration.toFixed(1)}秒 • ${gifWidth}×${gifHeight} • ${fps}fps • ${encoder.frameCount}枚出力 • ${formatBytes(blob.size)}`;
+                const finishTag = resolvedFinish === 'smooth' ? 'なめらか' : 'くっきり';
+                el.resultMeta.textContent = `1ループ約${actualLoopDuration.toFixed(1)}秒 • ${gifWidth}×${gifHeight} • ${fps}fps • ${finishTag} • ${formatBytes(blob.size)}`;
 
                 if (mergedFrames > 0) {
                     el.resultDedupText.textContent = `静止フレームを ${mergedFrames} 枚統合して軽量化しました（全${totalSamples}フレーム → 実出力${encoder.frameCount}フレーム）`;
@@ -2724,7 +1617,7 @@
                     blob: blob,
                     fileName: outFileName,
                     sizePresetLabel: state.selectedSizeLabel,
-                    finishMode: finishMode,
+                    finishMode: resolvedFinish,
                     width: gifWidth,
                     height: gifHeight,
                     fps: fps,
@@ -2735,39 +1628,4 @@
                     fileSize: blob.size,
                     createdAt: createdAt
                 });
-
-                showToast('GIFが完成し、履歴に保存されました！');
-                el.resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            } catch (err) {
-                finishConversionUI();
-                showAlert(
-                    'GIF変換中にエラーが発生しました',
-                    (err && err.message) || '動画の形式がブラウザで処理できない可能性があります。別の動画や短めの切り抜き範囲でお試しください。'
-                );
-            } finally {
-                if (offVideo) {
-                    offVideo.removeAttribute('src');
-                    try { offVideo.load(); } catch (_) {}
-                }
-            }
-        });
-
-        el.btnDownloadResult.addEventListener('click', () => {
-            if (state.currentResultUrl) {
-                triggerDownload(state.currentResultUrl, state.currentResultName || buildGifFileName());
-                showToast('ダウンロードを開始しました');
-            }
-        });
-
-        // ============================================================
-        // 12. 初期化
-        // ============================================================
-        initTheme();
-        updateViewportOptimization();
-        updateLoopPreviewAndWarnings();
-        initDB();
-    })();
-    </script>
-</body>
-</html>
+// ... existing code ... -->
